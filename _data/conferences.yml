@@ -1,9 +1,40 @@
+# Golden Examples
+#- title: LoG
+#  year: 2024
+#  id: log24
+#  full_name: Learning on Graphs Conference
+#  link: https://logconference.org
+#  deadline: 2024-09-11 23:59
+#  abstract_deadline: 2024-09-04 23:59
+#  timezone: UTC-12
+#  place: Virtual, free to attend
+#  date: November 26 - November 29, 2024
+#  start: 2024-11-26
+#  end: 2024-11-29
+#  sub: ['ML', 'DM', 'KR']
+#  note: Abstract deadline on Sep 04, 2024. More info <a href='https://logconference.org'>here</a>.
+#
+#- title: ECIR
+#  year: 2025
+#  id: ecir25
+#  full_name: European Conference on Information Retrieval
+#  link: https://ecir2025.eu/
+#  deadline: '2024-10-09 23:59:59'
+#  abstract_deadline: '2024-10-02 23:59:59'
+#  timezone: UTC-12
+#  place: Lucca, Tuscany, Italy
+#  date: April 6 - April 10, 2025
+#  start: 2025-04-06
+#  end: 2025-04-10
+#  sub: DM
+#  note: Abstract deadline on Oct 2, 2024. More info <a href='https://ecir2025.eu/'>here</a>.
+
 - title: AAAI
   year: 2025
   id: aaa25
   full_name: National Conference of the American Association for Artificial Intelligence
   link: https://aaai.org/conference/aaai/aaai-25/
-  deadline: 2024-08-01 23:59:59
+  deadline: '2024-08-01 23:59:59'
   timezone: UTC-5
   place: Philadelphia, USA
   date: February 25 - March 4, 2025
@@ -17,7 +48,7 @@
   id: nipsfmdm24
   full_name: NIPS, Foundation Models for Decision Making
   link: https://sites.google.com/view/fmdm-neurips23/?pli=1
-  deadline: 2024-10-01 23:59:59
+  deadline: '2024-10-01 23:59:59'
   timezone: UTC-8
   place: San Diego, USA
   note: More info <a href='https://sites.google.com/view/fmdm-neurips23/?pli=1'>here</a>.
@@ -27,7 +58,7 @@
   id: nipsitif24
   full_name: NIPS, Instruction Tuning and Instruction Following
   link: https://an-instructive-workshop.github.io/
-  deadline: 2024-10-01 23:59:59
+  deadline: '2024-10-01 23:59:59'
   timezone: UTC-8
   place: San Diego, USA
   note: More info <a href='https://an-instructive-workshop.github.io/'>here</a>.
@@ -37,7 +68,7 @@
   id: nipsaloe24
   full_name: NIPS, Agent Learning in Open-Endedness
   link: https://sites.google.com/view/aloe2023/home
-  deadline: 2024-10-01 23:59:59
+  deadline: '2024-10-01 23:59:59'
   timezone: UTC-8
   place: San Diego, USA
   note: More info <a href='https://sites.google.com/view/aloe2023/home'>here</a>.
@@ -47,7 +78,7 @@
   id: nipsenlsp24
   full_name: NIPS, Efficient Natural Language and Speech Processing
   link: https://neurips2023-enlsp.github.io/index.html#
-  deadline: 2024-10-01 23:59:59
+  deadline: '2024-10-01 23:59:59'
   timezone: UTC-8
   place: San Diego, USA
   note: More info <a href='https://neurips2023-enlsp.github.io/index.html#'>here</a>.
@@ -57,7 +88,7 @@
   id: nipsgp24
   full_name: NIPS, Generalization in Planning
   link: https://aair-lab.github.io/genplan23/
-  deadline: 2024-10-01 23:59:59
+  deadline: '2024-10-01 23:59:59'
   timezone: UTC-8
   place: San Diego, USA
   note: More info <a href='https://aair-lab.github.io/genplan23/'>here</a>.
@@ -67,7 +98,7 @@
   id: nipsmasec24
   full_name: "NIPS, Multi-Agent Security: Security as Key to AI Safety"
   link: https://sites.google.com/view/masec
-  deadline: 2024-10-01 23:59:59
+  deadline: '2024-10-01 23:59:59'
   timezone: UTC-8
   place: San Diego, USA
   note: More info <a href='https://sites.google.com/view/masec'>here</a>.
@@ -77,7 +108,7 @@
   id: aamas25
   full_name: International Conference on Autonomous Agents and Multi-Agent Systems
   link: https://aamas2025.org/#:~:text=AAMAS%202025%20Detroit&text=The%2024th%20International%20Conference%20on,in%20Detroit%2C%20Michigan%2C%20USA.
-  deadline: 2024-10-09 23:59:59
+  deadline: '2024-10-09 23:59:59'
   timezone: UTC-5
   place: Detroit, Michigan
   date: May 19 - 23, 2025
