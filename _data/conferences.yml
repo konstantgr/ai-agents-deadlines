@@ -13,6 +13,7 @@
   end: 2024-11-29
   sub: ['ML', 'DM', 'KR']
   note: Abstract deadline on Sep 04, 2024. More info <a href='https://logconference.org'>here</a>.
+
 - title: ECIR
   year: 2025
   id: ecir25
@@ -27,19 +28,20 @@
   end: 2025-04-10
   sub: DM
   note: Abstract deadline on Oct 2, 2024. More info <a href='https://ecir2025.eu/'>here</a>.
+
 - title: AAAI
   year: 2025
   id: aaa25
   full_name: National Conference of the American Association for Artificial Intelligence
   link: https://aaai.org/conference/aaai/aaai-25/
-  deadline: 2024-08-01 23:59:59
-  abstract_deadline: 2024-08-01 23:59:59
+  deadline: 2024-08-01 23:59
+  abstract_deadline: 2024-08-01 23:59
   timezone: UTC-12
   place: Philadelphia, USA
   date: February 25 - March 4, 2025
   start: 2025-02-25
   end: 2025-03-04
-  sub: [ 'AI' ]
+  sub: [ 'ML', "DM" ]
   note: More info <a href='https://aaai.org/conference/aaai/aaai-25/'>here</a>.
 
 - title: NIPS-FMDM
