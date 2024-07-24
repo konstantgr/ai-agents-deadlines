@@ -12,4 +12,4 @@ github_repo: ai-deadlines
 markdown: kramdown
 ga_id:
 
-include: [ '_pages' ]
+include: [ '_pages', "static" ]
