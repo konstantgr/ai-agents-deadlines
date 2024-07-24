@@ -1,299 +1,269 @@
-- title: LoG
-  year: 2024
-  id: log24
-  full_name: Learning on Graphs Conference
-  link: https://logconference.org
-  deadline: 2024-09-11 23:59
-  abstract_deadline: 2024-09-04 23:59
-  timezone: UTC-12
-  place: Virtual, free to attend
-  date: November 26 - November 29, 2024
-  start: 2024-11-26
-  end: 2024-11-29
-  sub: ['ML', 'DM', 'KR']
-  note: Abstract deadline on Sep 04, 2024. More info <a href='https://logconference.org'>here</a>.
-
-- title: ECIR
+- title: AAAI
   year: 2025
-  id: ecir25
-  full_name: European Conference on Information Retrieval
-  link: https://ecir2025.eu/
-  deadline: '2024-10-09 23:59:59'
-  abstract_deadline: '2024-10-02 23:59:59'
-  timezone: UTC-12
-  place: Lucca, Tuscany, Italy
-  date: April 6 - April 10, 2025
-  start: 2025-04-06
-  end: 2025-04-10
-  sub: DM
-  note: Abstract deadline on Oct 2, 2024. More info <a href='https://ecir2025.eu/'>here</a>.
+  id: aaa25
+  full_name: National Conference of the American Association for Artificial Intelligence
+  link: https://aaai.org/conference/aaai/aaai-25/
+  deadline: 2024-08-01 23:59:59
+  timezone: UTC-5
+  place: Philadelphia, USA
+  date: February 25 - March 4, 2025
+  start: 2025-02-25
+  end: 2025-03-04
+  sub: [ 'AI' ]
+  note: More info <a href='https://aaai.org/conference/aaai/aaai-25/'>here</a>.
 
-#- title: AAAI
-#  year: 2025
-#  id: aaa25
-#  full_name: National Conference of the American Association for Artificial Intelligence
-#  link: https://aaai.org/conference/aaai/aaai-25/
-#  deadline: 2024-08-01 23:59:59
-#  timezone: UTC-5
-#  place: Philadelphia, USA
-#  date: February 25 - March 4, 2025
-#  start: 2025-02-25
-#  end: 2025-03-04
-#  sub: [ 'AI' ]
-#  note: More info <a href='https://aaai.org/conference/aaai/aaai-25/'>here</a>.
-#
-#- title: NIPS-FMDM
-#  year: 2024
-#  id: nipsfmdm24
-#  full_name: NIPS, Foundation Models for Decision Making
-#  link: https://sites.google.com/view/fmdm-neurips23/?pli=1
-#  deadline: 2024-10-01 23:59:59
-#  timezone: UTC-8
-#  place: San Diego, USA
-#  note: More info <a href='https://sites.google.com/view/fmdm-neurips23/?pli=1'>here</a>.
-#
-#- title: NIPS-ITIF
-#  year: 2024
-#  id: nipsitif24
-#  full_name: NIPS, Instruction Tuning and Instruction Following
-#  link: https://an-instructive-workshop.github.io/
-#  deadline: 2024-10-01 23:59:59
-#  timezone: UTC-8
-#  place: San Diego, USA
-#  note: More info <a href='https://an-instructive-workshop.github.io/'>here</a>.
-#
-#- title: NIPS-ALOE
-#  year: 2024
-#  id: nipsaloe24
-#  full_name: NIPS, Agent Learning in Open-Endedness
-#  link: https://sites.google.com/view/aloe2023/home
-#  deadline: 2024-10-01 23:59:59
-#  timezone: UTC-8
-#  place: San Diego, USA
-#  note: More info <a href='https://sites.google.com/view/aloe2023/home'>here</a>.
-#
-#- title: NIPS-ENLSP
-#  year: 2024
-#  id: nipsenlsp24
-#  full_name: NIPS, Efficient Natural Language and Speech Processing
-#  link: https://neurips2023-enlsp.github.io/index.html#
-#  deadline: 2024-10-01 23:59:59
-#  timezone: UTC-8
-#  place: San Diego, USA
-#  note: More info <a href='https://neurips2023-enlsp.github.io/index.html#'>here</a>.
-#
-#- title: NIPS-GP
-#  year: 2024
-#  id: nipsgp24
-#  full_name: NIPS, Generalization in Planning
-#  link: https://aair-lab.github.io/genplan23/
-#  deadline: 2024-10-01 23:59:59
-#  timezone: UTC-8
-#  place: San Diego, USA
-#  note: More info <a href='https://aair-lab.github.io/genplan23/'>here</a>.
-#
-#- title: NIPS-MASEC
-#  year: 2024
-#  id: nipsmasec24
-#  full_name: "NIPS, Multi-Agent Security: Security as Key to AI Safety"
-#  link: https://sites.google.com/view/masec
-#  deadline: 2024-10-01 23:59:59
-#  timezone: UTC-8
-#  place: San Diego, USA
-#  note: More info <a href='https://sites.google.com/view/masec'>here</a>.
-#
-#- title: AAMAS
-#  year: 2025
-#  id: aamas25
-#  full_name: International Conference on Autonomous Agents and Multi-Agent Systems
-#  link: https://aamas2025.org/#:~:text=AAMAS%202025%20Detroit&text=The%2024th%20International%20Conference%20on,in%20Detroit%2C%20Michigan%2C%20USA.
-#  deadline: 2024-10-09 23:59:59
-#  timezone: UTC-5
-#  place: Detroit, Michigan
-#  date: May 19 - 23, 2025
-#  start: 2025-05-19
-#  end: 2025-05-23
-#  sub: [ 'AI', 'MAS' ]
-#  note: More info <a href='https://aamas2025.org/#:~:text=AAMAS%202025%20Detroit&text=The%2024th%20International%20Conference%20on,in%20Detroit%2C%20Michigan%2C%20USA.'>here</a>.
-#
-#- title: NAACL
-#  year: 2025
-#  id: naacl25
-#  full_name: North American Chapter of the Association for Computational Linguistics
-#  link: https://2025.naacl.org/
-#  deadline: 2024-10-15 23:59:59
-#  timezone: UTC-7
-#  place: Albuquerque, New Mexico
-#  date: April 29 - May 4, 2025
-#  start: 2025-04-29
-#  end: 2025-05-04
-#  sub: [ 'NLP' ]
-#  note: More info <a href='https://2025.naacl.org/'>here</a>.
-#
-#- title: IJCNN
-#  year: 2025
-#  id: ijcnn25
-#  full_name: IEEE International Joint Conference on Neural Networks
-#  link: https://2025.ijcnn.org/
-#  deadline: 2024-12-01 23:59:59
-#  timezone: UTC+1
-#  place: Rome, Italy
-#  date: June 30 - July 5, 2025
-#  start: 2025-06-30
-#  end: 2025-07-05
-#  sub: [ 'NN' ]
-#  note: More info <a href='https://2025.ijcnn.org/'>here</a>.
-#
-#- title: Craft Beer Conference
-#  year: 2025
-#  id: cbc25
-#  full_name: Craft Beer Conference
-#  link: https://www.craftbrewersconference.com/
-#  deadline: 2024-12-31 23:59:59
-#  timezone: UTC+6
-#  place: Karaganda
-#  date: New Year
-#  start: 2025-01-01
-#  end: 2025-01-01
-#  sub: 'Beverage'
-#  note: More info <a href='https://www.craftbrewersconference.com/'>here</a>.
-#
-#- title: IJCAI
-#  year: 2025
-#  id: ijcai25
-#  full_name: International Joint Conference on Artificial Intelligence
-#  link: https://ijcai24.org/
-#  deadline: 2025-01-01 23:59:59
-#  timezone: UTC-5
-#  place: Montreal, Canada
-#  date: August 2025
-#  start: 2025-08-01
-#  end: 2025-08-31
-#  sub: [ 'AI' ]
-#  note: More info <a href='https://ijcai24.org/'>here</a>.
-#
-#- title: ICML
-#  year: 2025
-#  id: icml25
-#  full_name: International Conference on Machine Learning
-#  link: https://icml.cc/Conferences/FutureMeetings
-#  deadline: 2025-02-01 23:59:59
-#  timezone: UTC-8
-#  place: Vancouver, Canada
-#  date: July 2025
-#  start: 2025-07-01
-#  end: 2025-07-31
-#  sub: [ 'ML' ]
-#  note: More info <a href='https://icml.cc/Conferences/FutureMeetings'>here</a>.
-#
-#- title: ACL
-#  year: 2025
-#  id: acl25
-#  full_name: Association for Computational Linguistics
-#  link: "?"
-#  deadline: 2025-02-01 23:59:59
-#  timezone: UTC
-#  place: "?"
-#  date: August 2025
-#  start: 2025-08-01
-#  end: 2025-08-31
-#  sub: [ 'NLP' ]
-#  note: More info unavailable.
-#
-#- title: EACL
-#  year: 2024
-#  id: eacl24
-#  full_name: European Chapter of the Association for Computational Linguistics
-#  link: https://2024.eacl.org/
-#  deadline: 2025-03-01 23:59:59
-#  timezone: UTC
-#  place: "?"
-#  date: December 2024
-#  start: 2024-12-01
-#  end: 2024-12-31
-#  sub: [ 'NLP' ]
-#  note: More info <a href='https://2024.eacl.org/'>here</a>.
-#
-#- title: ICSE
-#  year: 2025
-#  id: icse25
-#  full_name: International Conference on Software Engineering
-#  link: https://conf.researchr.org/home/icse-2025
-#  deadline: 2025-03-01 23:59:59
-#  timezone: UTC-5
-#  place: Ottawa, Canada
-#  date: April 27 - May 3, 2025
-#  start: 2025-04-27
-#  end: 2025-05-03
-#  sub: [ 'SE' ]
-#  note: More info <a href='https://conf.researchr.org/home/icse-2025'>here</a>.
-#
-#- title: NIPS
-#  year: 2025
-#  id: nips25
-#  full_name: Conference on Neural Information Processing Systems
-#  link: https://neurips.cc/Conferences/2024/Dates
-#  deadline: 2025-04-01 23:59:59
-#  timezone: UTC-8
-#  place: San Diego, USA
-#  date: December 2025
-#  start: 2025-12-01
-#  end: 2025-12-31
-#  sub: [ 'ML' ]
-#  note: More info <a href='https://neurips.cc/Conferences/2024/Dates'>here</a>.
-#
-#- title: ECAI
-#  year: 2025
-#  id: ecai25
-#  full_name: "European Conference on Artificial Intelligence"
-#  link: https://www.ecai2024.eu/
-#  deadline: 2025-04-01 23:59:59
-#  timezone: UTC+1
-#  place: Bologna, Italy
-#  date: October 27-31, 2025
-#  start: 2025-10-27
-#  end: 2025-10-31
-#  sub: [ 'AI' ]
-#  note: More info <a href='https://www.ecai2024.eu/'>here</a>.
-#
-#- title: EMNLP
-#  year: 2025
-#  id: emnlp25
-#  full_name: Conference on Empirical Methods in Natural Language Processing
-#  link: https://2024.emnlp.org/
-#  deadline: 2025-06-01 23:59:59
-#  timezone: UTC
-#  place: "?"
-#  date: November 2025
-#  start: 2025-11-01
-#  end: 2025-11-30
-#  sub: [ 'NLP' ]
-#  note: More info <a href='https://2024.emnlp.org/'>here</a>.
-#
-#- title: ICLR
-#  year: 2025
-#  id: iclr25
-#  full_name: International Conference on Learning Representations
-#  link: https://iclr.cc/
-#  deadline: 2025-10-01 23:59:59
-#  timezone: UTC+8
-#  place: Singapore
-#  date: April 24 - 28, 2025
-#  start: 2025-04-24
-#  end: 2025-04-28
-#  sub: [ 'ML' ]
-#  note: More info <a href='https://iclr.cc/'>here</a>.
-#
-#- title: MSR
-#  year: 2025
-#  id: msr25
-#  full_name: International Conference on Mining Software Repositories
-#  link: https://2025.msrconf.org/track/msr-2025-papers
-#  deadline: 2025-11-01 23:59:59
-#  timezone: UTC-5
-#  place: Ottawa, Canada
-#  date: April 28 - May 29, 2025
-#  start: 2025-04-28
-#  end: 2025-05-29
-#  sub: [ 'SE' ]
-#  note: More info <a href='https://2025.msrconf.org/track/msr-2025-papers'>here</a>.
+- title: NIPS-FMDM
+  year: 2024
+  id: nipsfmdm24
+  full_name: NIPS, Foundation Models for Decision Making
+  link: https://sites.google.com/view/fmdm-neurips23/?pli=1
+  deadline: 2024-10-01 23:59:59
+  timezone: UTC-8
+  place: San Diego, USA
+  note: More info <a href='https://sites.google.com/view/fmdm-neurips23/?pli=1'>here</a>.
+
+- title: NIPS-ITIF
+  year: 2024
+  id: nipsitif24
+  full_name: NIPS, Instruction Tuning and Instruction Following
+  link: https://an-instructive-workshop.github.io/
+  deadline: 2024-10-01 23:59:59
+  timezone: UTC-8
+  place: San Diego, USA
+  note: More info <a href='https://an-instructive-workshop.github.io/'>here</a>.
+
+- title: NIPS-ALOE
+  year: 2024
+  id: nipsaloe24
+  full_name: NIPS, Agent Learning in Open-Endedness
+  link: https://sites.google.com/view/aloe2023/home
+  deadline: 2024-10-01 23:59:59
+  timezone: UTC-8
+  place: San Diego, USA
+  note: More info <a href='https://sites.google.com/view/aloe2023/home'>here</a>.
+
+- title: NIPS-ENLSP
+  year: 2024
+  id: nipsenlsp24
+  full_name: NIPS, Efficient Natural Language and Speech Processing
+  link: https://neurips2023-enlsp.github.io/index.html#
+  deadline: 2024-10-01 23:59:59
+  timezone: UTC-8
+  place: San Diego, USA
+  note: More info <a href='https://neurips2023-enlsp.github.io/index.html#'>here</a>.
+
+- title: NIPS-GP
+  year: 2024
+  id: nipsgp24
+  full_name: NIPS, Generalization in Planning
+  link: https://aair-lab.github.io/genplan23/
+  deadline: 2024-10-01 23:59:59
+  timezone: UTC-8
+  place: San Diego, USA
+  note: More info <a href='https://aair-lab.github.io/genplan23/'>here</a>.
+
+- title: NIPS-MASEC
+  year: 2024
+  id: nipsmasec24
+  full_name: "NIPS, Multi-Agent Security: Security as Key to AI Safety"
+  link: https://sites.google.com/view/masec
+  deadline: 2024-10-01 23:59:59
+  timezone: UTC-8
+  place: San Diego, USA
+  note: More info <a href='https://sites.google.com/view/masec'>here</a>.
+
+- title: AAMAS
+  year: 2025
+  id: aamas25
+  full_name: International Conference on Autonomous Agents and Multi-Agent Systems
+  link: https://aamas2025.org/#:~:text=AAMAS%202025%20Detroit&text=The%2024th%20International%20Conference%20on,in%20Detroit%2C%20Michigan%2C%20USA.
+  deadline: 2024-10-09 23:59:59
+  timezone: UTC-5
+  place: Detroit, Michigan
+  date: May 19 - 23, 2025
+  start: 2025-05-19
+  end: 2025-05-23
+  sub: [ 'AI', 'MAS' ]
+  note: More info <a href='https://aamas2025.org/#:~:text=AAMAS%202025%20Detroit&text=The%2024th%20International%20Conference%20on,in%20Detroit%2C%20Michigan%2C%20USA.'>here</a>.
+
+- title: NAACL
+  year: 2025
+  id: naacl25
+  full_name: North American Chapter of the Association for Computational Linguistics
+  link: https://2025.naacl.org/
+  deadline: 2024-10-15 23:59:59
+  timezone: UTC-7
+  place: Albuquerque, New Mexico
+  date: April 29 - May 4, 2025
+  start: 2025-04-29
+  end: 2025-05-04
+  sub: [ 'NLP' ]
+  note: More info <a href='https://2025.naacl.org/'>here</a>.
+
+- title: IJCNN
+  year: 2025
+  id: ijcnn25
+  full_name: IEEE International Joint Conference on Neural Networks
+  link: https://2025.ijcnn.org/
+  deadline: 2024-12-01 23:59:59
+  timezone: UTC+1
+  place: Rome, Italy
+  date: June 30 - July 5, 2025
+  start: 2025-06-30
+  end: 2025-07-05
+  sub: [ 'NN' ]
+  note: More info <a href='https://2025.ijcnn.org/'>here</a>.
+
+- title: Craft Beer Conference
+  year: 2025
+  id: cbc25
+  full_name: Craft Beer Conference
+  link: https://www.craftbrewersconference.com/
+  deadline: 2024-12-31 23:59:59
+  timezone: UTC+6
+  place: Karaganda
+  date: New Year
+  start: 2025-01-01
+  end: 2025-01-01
+  sub: 'Beverage'
+  note: More info <a href='https://www.craftbrewersconference.com/'>here</a>.
+
+- title: IJCAI
+  year: 2025
+  id: ijcai25
+  full_name: International Joint Conference on Artificial Intelligence
+  link: https://ijcai24.org/
+  deadline: 2025-01-01 23:59:59
+  timezone: UTC-5
+  place: Montreal, Canada
+  date: August 2025
+  start: 2025-08-01
+  end: 2025-08-31
+  sub: [ 'AI' ]
+  note: More info <a href='https://ijcai24.org/'>here</a>.
+
+- title: ICML
+  year: 2025
+  id: icml25
+  full_name: International Conference on Machine Learning
+  link: https://icml.cc/Conferences/FutureMeetings
+  deadline: 2025-02-01 23:59:59
+  timezone: UTC-8
+  place: Vancouver, Canada
+  date: July 2025
+  start: 2025-07-01
+  end: 2025-07-31
+  sub: [ 'ML' ]
+  note: More info <a href='https://icml.cc/Conferences/FutureMeetings'>here</a>.
+
+- title: ACL
+  year: 2025
+  id: acl25
+  full_name: Association for Computational Linguistics
+  link: "?"
+  deadline: 2025-02-01 23:59:59
+  timezone: UTC
+  place: "?"
+  date: August 2025
+  start: 2025-08-01
+  end: 2025-08-31
+  sub: [ 'NLP' ]
+  note: More info unavailable.
+
+- title: EACL
+  year: 2024
+  id: eacl24
+  full_name: European Chapter of the Association for Computational Linguistics
+  link: https://2024.eacl.org/
+  deadline: 2025-03-01 23:59:59
+  timezone: UTC
+  place: "?"
+  date: December 2024
+  start: 2024-12-01
+  end: 2024-12-31
+  sub: [ 'NLP' ]
+  note: More info <a href='https://2024.eacl.org/'>here</a>.
+
+- title: ICSE
+  year: 2025
+  id: icse25
+  full_name: International Conference on Software Engineering
+  link: https://conf.researchr.org/home/icse-2025
+  deadline: 2025-03-01 23:59:59
+  timezone: UTC-5
+  place: Ottawa, Canada
+  date: April 27 - May 3, 2025
+  start: 2025-04-27
+  end: 2025-05-03
+  sub: [ 'SE' ]
+  note: More info <a href='https://conf.researchr.org/home/icse-2025'>here</a>.
+
+- title: NIPS
+  year: 2025
+  id: nips25
+  full_name: Conference on Neural Information Processing Systems
+  link: https://neurips.cc/Conferences/2024/Dates
+  deadline: 2025-04-01 23:59:59
+  timezone: UTC-8
+  place: San Diego, USA
+  date: December 2025
+  start: 2025-12-01
+  end: 2025-12-31
+  sub: [ 'ML' ]
+  note: More info <a href='https://neurips.cc/Conferences/2024/Dates'>here</a>.
+
+- title: ECAI
+  year: 2025
+  id: ecai25
+  full_name: "European Conference on Artificial Intelligence"
+  link: https://www.ecai2024.eu/
+  deadline: 2025-04-01 23:59:59
+  timezone: UTC+1
+  place: Bologna, Italy
+  date: October 27-31, 2025
+  start: 2025-10-27
+  end: 2025-10-31
+  sub: [ 'AI' ]
+  note: More info <a href='https://www.ecai2024.eu/'>here</a>.
+
+- title: EMNLP
+  year: 2025
+  id: emnlp25
+  full_name: Conference on Empirical Methods in Natural Language Processing
+  link: https://2024.emnlp.org/
+  deadline: 2025-06-01 23:59:59
+  timezone: UTC
+  place: "?"
+  date: November 2025
+  start: 2025-11-01
+  end: 2025-11-30
+  sub: [ 'NLP' ]
+  note: More info <a href='https://2024.emnlp.org/'>here</a>.
+
+- title: ICLR
+  year: 2025
+  id: iclr25
+  full_name: International Conference on Learning Representations
+  link: https://iclr.cc/
+  deadline: 2025-10-01 23:59:59
+  timezone: UTC+8
+  place: Singapore
+  date: April 24 - 28, 2025
+  start: 2025-04-24
+  end: 2025-04-28
+  sub: [ 'ML' ]
+  note: More info <a href='https://iclr.cc/'>here</a>.
+
+- title: MSR
+  year: 2025
+  id: msr25
+  full_name: International Conference on Mining Software Repositories
+  link: https://2025.msrconf.org/track/msr-2025-papers
+  deadline: 2025-11-01 23:59:59
+  timezone: UTC-5
+  place: Ottawa, Canada
+  date: April 28 - May 29, 2025
+  start: 2025-04-28
+  end: 2025-05-29
+  sub: [ 'SE' ]
+  note: More info <a href='https://2025.msrconf.org/track/msr-2025-papers'>here</a>.
