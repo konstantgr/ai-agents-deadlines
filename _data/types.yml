@@ -23,6 +23,9 @@
 - name: Data Mining
   sub: DM
   color: "#be0aff"
+- name: Software Engineering
+  sub: SE
+  color: "#be0aff"
 - name: Automated Planning
   sub: AP
   color: "#a432a8"
