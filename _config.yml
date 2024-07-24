@@ -2,8 +2,8 @@ title: AI Conference Deadlines
 description: Countdowns to top CV/NLP/ML/Robotics/AI conference deadlines
 author: Abhishek Das
 
-domain: 'konstantgr.github.io'
-baseurl: ''
+baseurl: /ai-agents-deadlines
+#url: http://konstantgr.github.io
 
 twitter_hashtag: machinelearning
 github_username: konstantgr
