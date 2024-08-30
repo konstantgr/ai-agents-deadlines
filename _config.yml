@@ -2,8 +2,8 @@ title: ⏰ Conference Deadlines
 description: Countdowns to conference deadlines
 author: Konstantin Grotov
 
-domain: 'konstantgr.github.io'
-baseurl: 'ai-agents-deadlines'
+domain: 'ai-agents-deadlines.github.io'
+baseurl: ''
 
 twitter_hashtag: ''
 github_username: konstantgr
