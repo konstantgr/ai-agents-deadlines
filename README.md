@@ -1,6 +1,6 @@
-## HCI Deadlines
+## Deadlines
 
-Countdown timers to keep track of a bunch of Human-Computer Interaction conference deadlines.
+Countdown timers to keep track of a bunch of conference deadlines.
 
 This is a fork of the [ai-deadlines](https://github.com/paperswithcode/ai-deadlines) website.
 
