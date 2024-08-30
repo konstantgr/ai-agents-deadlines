@@ -1,301 +1,595 @@
-# Golden Examples
-#- title: LoG
-#  year: 2024
-#  id: log24
-#  full_name: Learning on Graphs Conference
-#  link: https://logconference.org
-#  deadline: 2025-09-11 23:59
-#  abstract_deadline: 2025-09-04 23:59
-#  timezone: UTC-12
-#  place: Virtual, free to attend
-#  date: November 26 - November 29, 2024
-#  start: 2024-11-26
-#  end: 2024-11-29
-#  sub: ['ML', 'DM', 'KR']
-#  note: Abstract deadline on Sep 04, 2024. More info <a href='https://logconference.org'>here</a>.
-#
-#- title: ECIR
-#  year: 2025
-#  id: ecir25
-#  full_name: European Conference on Information Retrieval
-#  link: https://ecir2025.eu/
-#  deadline: '2024-10-09 23:59:59'
-#  abstract_deadline: '2024-10-02 23:59:59'
-#  timezone: UTC-12
-#  place: Lucca, Tuscany, Italy
-#  date: April 6 - April 10, 2025
-#  start: 2025-04-06
-#  end: 2025-04-10
-#  sub: DM
-#  note: Abstract deadline on Oct 2, 2024. More info <a href='https://ecir2025.eu/'>here</a>.
-
-- title: AAAI
-  year: 2025
-  id: aaa25
-  full_name: National Conference of the American Association for Artificial Intelligence
+- abstract_deadline: '2024-08-07'
+  date: February 25 - March 4 2025
+  deadline: '2024-08-15'
+  full_name: 'AAAI: National Conference of the American Association for Artificial
+    Intelligence'
+  id: aaai_national_conference_of_the_american_association_for_artificial_intelligence_2024
   link: https://aaai.org/conference/aaai/aaai-25/
-  deadline: 2024-08-01 23:59
-  abstract_deadline: 2024-08-01 23:59
-  timezone: UTC-12
+  note: main track
   place: Philadelphia, USA
-  date: February 25 - March 4, 2025
-  start: 2025-02-25
-  end: 2025-03-04
-  sub: [ 'ML', "DM" ]
-  note: More info <a href='https://aaai.org/conference/aaai/aaai-25/'>here</a>.
-
-- title: NIPS-FMDM
+  sub: ML
+  timezone: UTC-12
+  title: 'AAAI: National Conference of the American Association for Artificial Intelligence'
   year: 2024
-  id: nipsfmdm24
-  full_name: NIPS, Foundation Models for Decision Making
-  link: https://sites.google.com/view/fmdm-neurips23/?pli=1
-  deadline: '2024-10-01 23:59:59'
-  timezone: UTC-8
+- abstract_deadline: '2024-08-07'
+  date: February 25 - March 4 2025
+  deadline: '2024-08-15'
+  full_name: 'AAAI: Special Track on AI Alignment'
+  id: aaai_special_track_on_ai_alignment_2024
+  link: https://aaai.org/conference/aaai/aaai-25/ai-alignment-call/
+  note: sub track
+  place: Philadelphia, USA
+  sub: ML
+  timezone: UTC-12
+  title: 'AAAI: Special Track on AI Alignment'
+  year: 2024
+- abstract_deadline: '2024-10-03'
+  date: February 25 - March 4 2026
+  deadline: '2024-10-03'
+  full_name: 'AAAI: Demonstration Track'
+  id: aaai_demonstration_track_2024
+  link: https://aaai.org/conference/aaai/aaai-25/demo-program-call/
+  note: sub track
+  place: Philadelphia, USA
+  sub: ML
+  timezone: UTC-12
+  title: 'AAAI: Demonstration Track'
+  year: 2024
+- abstract_deadline: '2024-05-22'
+  date: December 9 - 16 2024
+  deadline: '2024-05-22'
+  full_name: 'NIPS: Annual Conference on Neural Information Processing Systems'
+  id: nips_annual_conference_on_neural_information_processing_systems_2024
+  link: https://neurips.cc/
+  note: main track
   place: San Diego, USA
-  note: More info <a href='https://sites.google.com/view/fmdm-neurips23/?pli=1'>here</a>.
-
-- title: NIPS-ITIF
+  sub: ML
+  timezone: UTC-12
+  title: 'NIPS: Annual Conference on Neural Information Processing Systems'
   year: 2024
-  id: nipsitif24
-  full_name: NIPS, Instruction Tuning and Instruction Following
+- abstract_deadline: '2024-05-29'
+  date: December 9 - 16 2024
+  deadline: '2024-06-05'
+  full_name: 'NIPS: Datasets and Benchmarks Track'
+  id: nips_datasets_and_benchmarks_track_2024
+  link: https://neurips.cc/Conferences/2024/CallForDatasetsBenchmarks
+  note: sub track
+  place: San Diego, USA
+  sub: ML
+  timezone: UTC-12
+  title: 'NIPS: Datasets and Benchmarks Track'
+  year: 2024
+- abstract_deadline: '2024-10-01'
+  date: December 9 - 16 2024
+  deadline: '2024-10-01'
+  full_name: 'NIPS: Foundation Models for Decision Making'
+  id: nips_foundation_models_for_decision_making_2024
+  link: https://sites.google.com/view/fmdm-neurips23/home?authuser=0
+  note: workshop
+  place: San Diego, USA
+  sub: ML
+  timezone: UTC-12
+  title: 'NIPS: Foundation Models for Decision Making'
+  year: 2024
+- abstract_deadline: '2024-10-01'
+  date: December 9 - 16 2024
+  deadline: '2024-10-01'
+  full_name: 'NIPS: Instruction Tuning and Instruction Following'
+  id: nips_instruction_tuning_and_instruction_following_2024
   link: https://an-instructive-workshop.github.io/
-  deadline: '2024-10-01 23:59:59'
-  timezone: UTC-8
+  note: workshop
   place: San Diego, USA
-  note: More info <a href='https://an-instructive-workshop.github.io/'>here</a>.
-
-- title: NIPS-ALOE
+  sub: ML
+  timezone: UTC-12
+  title: 'NIPS: Instruction Tuning and Instruction Following'
   year: 2024
-  id: nipsaloe24
-  full_name: NIPS, Agent Learning in Open-Endedness
+- abstract_deadline: '2024-10-01'
+  date: December 9 - 16 2024
+  deadline: '2024-10-01'
+  full_name: 'NIPS: Agent Learning in Open-Endedness (ALOE)'
+  id: nips_agent_learning_in_openendedness_aloe_2024
   link: https://sites.google.com/view/aloe2023/home
-  deadline: '2024-10-01 23:59:59'
-  timezone: UTC-8
+  note: workshop
   place: San Diego, USA
-  note: More info <a href='https://sites.google.com/view/aloe2023/home'>here</a>.
-
-- title: NIPS-ENLSP
+  sub: ML
+  timezone: UTC-12
+  title: 'NIPS: Agent Learning in Open-Endedness (ALOE)'
   year: 2024
-  id: nipsenlsp24
-  full_name: NIPS, Efficient Natural Language and Speech Processing
+- abstract_deadline: '2024-10-01'
+  date: December 9 - 16 2024
+  deadline: '2024-10-01'
+  full_name: 'NIPS: Efficient Natural Language and Speech Processing (ENLSP)'
+  id: nips_efficient_natural_language_and_speech_processing_enlsp_2024
   link: https://neurips2023-enlsp.github.io/index.html#
-  deadline: '2024-10-01 23:59:59'
-  timezone: UTC-8
+  note: workshop
   place: San Diego, USA
-  note: More info <a href='https://neurips2023-enlsp.github.io/index.html#'>here</a>.
-
-- title: NIPS-GP
+  sub: ML
+  timezone: UTC-12
+  title: 'NIPS: Efficient Natural Language and Speech Processing (ENLSP)'
   year: 2024
-  id: nipsgp24
-  full_name: NIPS, Generalization in Planning
+- abstract_deadline: '2024-10-01'
+  date: December 9 - 16 2024
+  deadline: '2024-10-01'
+  full_name: 'NIPS: Generalization in Planning'
+  id: nips_generalization_in_planning_2024
   link: https://aair-lab.github.io/genplan23/
-  deadline: '2024-10-01 23:59:59'
-  timezone: UTC-8
+  note: workshop
   place: San Diego, USA
-  note: More info <a href='https://aair-lab.github.io/genplan23/'>here</a>.
-
-- title: NIPS-MASEC
+  sub: ML
+  timezone: UTC-12
+  title: 'NIPS: Generalization in Planning'
   year: 2024
-  id: nipsmasec24
-  full_name: "NIPS, Multi-Agent Security: Security as Key to AI Safety"
+- abstract_deadline: '2024-10-01'
+  date: December 9 - 16 2024
+  deadline: '2024-10-01'
+  full_name: 'NIPS: Multi-Agent Security: Security as Key to AI Safety'
+  id: nips_multiagent_security_security_as_key_to_ai_safety_2024
   link: https://sites.google.com/view/masec
-  deadline: '2024-10-01 23:59:59'
-  timezone: UTC-8
+  note: workshop
   place: San Diego, USA
-  note: More info <a href='https://sites.google.com/view/masec'>here</a>.
-
-- title: AAMAS
-  year: 2025
-  id: aamas25
-  full_name: International Conference on Autonomous Agents and Multi-Agent Systems
-  link: https://aamas2025.org/#:~:text=AAMAS%202025%20Detroit&text=The%2024th%20International%20Conference%20on,in%20Detroit%2C%20Michigan%2C%20USA.
-  deadline: '2024-10-09 23:59:59'
-  timezone: UTC-8
-  place: Detroit, Michigan
-  date: May 19 - 23, 2025
-  start: 2025-05-19
-  end: 2025-05-23
-  sub: [ 'AI' ]
-  note: More info <a href='https://aamas2025.org/#:~:text=AAMAS%202025%20Detroit&text=The%2024th%20International%20Conference%20on,in%20Detroit%2C%20Michigan%2C%20USA.'>here</a>.
-
-- title: NAACL
-  year: 2025
-  id: naacl25
-  full_name: North American Chapter of the Association for Computational Linguistics
-  link: https://2025.naacl.org/
-  deadline: 2024-10-15 23:59:59
-  timezone: UTC-8
-  place: Albuquerque, New Mexico
-  date: April 29 - May 4, 2025
-  start: 2025-04-29
-  end: 2025-05-04
-  sub: [ 'NLP' ]
-  note: More info <a href='https://2025.naacl.org/'>here</a>.
-
-- title: IJCNN
-  year: 2025
-  id: ijcnn25
-  full_name: IEEE International Joint Conference on Neural Networks
-  link: https://2025.ijcnn.org/
-  deadline: 2024-12-01 23:59:59
-  timezone: UTC-8
-  place: Rome, Italy
-  date: June 30 - July 5, 2025
-  start: 2025-06-30
-  end: 2025-07-05
-  sub: AI
-  note: More info <a href='https://2025.ijcnn.org/'>here</a>.
-
-- title: Craft Beer Conference
-  year: 2025
-  id: cbc25
-  full_name: Craft Beer Conference
-  link: https://www.craftbrewersconference.com/
-  deadline: 2024-12-31 23:59:59
-  timezone: UTC-8
-  place: Karaganda
-  date: New Year
-  start: 2025-01-01
-  end: 2025-01-01
-  sub: AI
-  note: More info <a href='https://www.craftbrewersconference.com/'>here</a>.
-
-- title: IJCAI
-  year: 2025
-  id: ijcai25
-  full_name: International Joint Conference on Artificial Intelligence
-  link: https://ijcai24.org/
-  deadline: 2025-01-01 23:59:59
-  timezone: UTC-8
-  place: Montreal, Canada
-  date: August 2025
-  start: 2025-08-01
-  end: 2025-08-31
-  sub: [ 'AI' ]
-  note: More info <a href='https://ijcai24.org/'>here</a>.
-
-- title: ICML
-  year: 2025
-  id: icml25
-  full_name: International Conference on Machine Learning
-  link: https://icml.cc/Conferences/FutureMeetings
-  deadline: 2025-02-01 23:59:59
-  timezone: UTC-8
-  place: Vancouver, Canada
-  date: July 2025
-  start: 2025-07-01
-  end: 2025-07-31
-  sub: [ 'ML' ]
-  note: More info <a href='https://icml.cc/Conferences/FutureMeetings'>here</a>.
-
-- title: ACL
-  year: 2025
-  id: acl25
-  full_name: Association for Computational Linguistics
-  link: "?"
-  deadline: 2025-02-01 23:59:59
-  timezone: UTC-8
-  place: "?"
-  date: August 2025
-  start: 2025-08-01
-  end: 2025-08-31
-  sub: [ 'NLP' ]
-  note: More info unavailable.
-
-- title: EACL
+  sub: ML
+  timezone: UTC-12
+  title: 'NIPS: Multi-Agent Security: Security as Key to AI Safety'
   year: 2024
-  id: eacl24
-  full_name: European Chapter of the Association for Computational Linguistics
+- abstract_deadline: '2024-10-09'
+  date: May 19 - 23 2025
+  deadline: '2024-10-16'
+  full_name: 'AAMAS: International Conference on Autonomous Agents and Multi-Agent
+    Systems'
+  id: aamas_international_conference_on_autonomous_agents_and_multiagent_systems_2024
+  link: https://aamas2025.org/#:~:text=AAMAS%202025%20Detroit&text=The%2024th%20International%20Conference%20on,in%20Detroit%2C%20Michigan%2C%20USA.
+  note: main track
+  place: Detroit, Michigan
+  sub: ML
+  timezone: UTC-12
+  title: 'AAMAS: International Conference on Autonomous Agents and Multi-Agent Systems'
+  year: 2024
+- abstract_deadline: '2024-10-15'
+  date: April 29 - May 4 2025
+  deadline: '2024-10-15'
+  full_name: 'NAACL: Annual Conference of the North American Chapter of the Association
+    for Computational Linguistics'
+  id: naacl_annual_conference_of_the_north_american_chapter_of_the_association_for_computational_linguistics_2024
+  link: https://2025.naacl.org/
+  note: main track
+  place: Albuquerque, New Mexico
+  sub: ML
+  timezone: UTC-12
+  title: 'NAACL: Annual Conference of the North American Chapter of the Association
+    for Computational Linguistics'
+  year: 2024
+- abstract_deadline: '2025-01-15'
+  date: June 30 - July 5 2025
+  deadline: '2025-01-15'
+  full_name: 'IEEE IJCNN: International Joint Conference on Neural Networks'
+  id: ieee_ijcnn_international_joint_conference_on_neural_networks_2025
+  link: https://2025.ijcnn.org/
+  note: main track
+  place: Rome, Italy
+  sub: ML
+  timezone: UTC-12
+  title: 'IEEE IJCNN: International Joint Conference on Neural Networks'
+  year: 2025
+- abstract_deadline: '2025-01-10'
+  date: ~August 2025
+  deadline: '2025-01-17'
+  full_name: 'IJCAI: International Joint Conference on Artificial Intelligence'
+  id: ijcai_international_joint_conference_on_artificial_intelligence_2025
+  link: https://ijcai24.org/
+  note: main track
+  place: Montreal, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'IJCAI: International Joint Conference on Artificial Intelligence'
+  year: 2025
+- abstract_deadline: '2025-02-01'
+  date: July 11 - 19 2025
+  deadline: '2025-02-01'
+  full_name: 'ICML: International Conference on Machine Learning'
+  id: icml_international_conference_on_machine_learning_2025
+  link: https://icml.cc/Conferences/FutureMeetings
+  note: main track
+  place: Vancouver, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'ICML: International Conference on Machine Learning'
+  year: 2025
+- abstract_deadline: '2025-05-26'
+  date: July 11 - 19 2025
+  deadline: '2025-05-26'
+  full_name: 'ICML: Agentic Markets'
+  id: icml_agentic_markets_2025
+  link: https://sites.google.com/view/amw-2024/home
+  note: workshop
+  place: Vancouver, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'ICML: Agentic Markets'
+  year: 2025
+- abstract_deadline: '2025-05-27'
+  date: July 11 - 19 2025
+  deadline: '2025-05-27'
+  full_name: 'ICML: Multi-modal Foundation Model meets Embodied AI (MFM-EAI)'
+  id: icml_multimodal_foundation_model_meets_embodied_ai_mfmeai_2025
+  link: https://icml-mfm-eai.github.io/
+  note: workshop
+  place: Vancouver, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'ICML: Multi-modal Foundation Model meets Embodied AI (MFM-EAI)'
+  year: 2025
+- abstract_deadline: '2025-02-15'
+  date: July 27 - August 1 2025
+  deadline: '2025-02-15'
+  full_name: 'ACL: Annual Meeting of the Association for Computational Linguistics'
+  id: acl_annual_meeting_of_the_association_for_computational_linguistics_2025
+  link: https://2025.aclweb.org/
+  note: main track
+  place: Vienna, Austria
+  sub: ML
+  timezone: UTC-12
+  title: 'ACL: Annual Meeting of the Association for Computational Linguistics'
+  year: 2025
+- abstract_deadline: '2025-05-21'
+  date: July 27 - August 1 2025
+  deadline: '2025-05-21'
+  full_name: 'ACL: Natural Language Reasoning and Structured Explanations Workshop'
+  id: acl_natural_language_reasoning_and_structured_explanations_workshop_2025
+  link: https://nl-reasoning-workshop.github.io/
+  note: workshop
+  place: Vienna, Austria
+  sub: ML
+  timezone: UTC-12
+  title: 'ACL: Natural Language Reasoning and Structured Explanations Workshop'
+  year: 2025
+- abstract_deadline: '2025-10-15'
+  date: ~March 2025
+  deadline: '2025-10-15'
+  full_name: 'EACL: Conference of the European Chapterof the Association for Computational
+    Linguistics'
+  id: eacl_conference_of_the_european_chapterof_the_association_for_computational_linguistics_2025
   link: https://2024.eacl.org/
-  deadline: 2025-03-01 23:59:59
-  timezone: UTC-8
-  place: "?"
-  date: December 2024
-  start: 2024-12-01
-  end: 2024-12-31
-  sub: [ 'NLP' ]
-  note: More info <a href='https://2024.eacl.org/'>here</a>.
-
-- title: ICSE
+  note: main track
+  place: '?'
+  sub: ML
+  timezone: UTC-12
+  title: 'EACL: Conference of the European Chapterof the Association for Computational
+    Linguistics'
   year: 2025
-  id: icse25
-  full_name: International Conference on Software Engineering
+- abstract_deadline: '2024-03-15'
+  date: 27 April - 3 May 2025
+  deadline: '2024-03-22'
+  full_name: 'ICSE: International Conference onSoftware Engineering'
+  id: icse_international_conference_onsoftware_engineering_2024
   link: https://conf.researchr.org/home/icse-2025
-  deadline: 2025-03-01 23:59:59
-  timezone: UTC-8
+  note: main track cycle 1
   place: Ottawa, Canada
-  date: April 27 - May 3, 2025
-  start: 2025-04-27
-  end: 2025-05-03
-  sub: [ 'SE' ]
-  note: More info <a href='https://conf.researchr.org/home/icse-2025'>here</a>.
-
-- title: NIPS
+  sub: ML
+  timezone: UTC-12
+  title: 'ICSE: International Conference onSoftware Engineering'
+  year: 2024
+- abstract_deadline: '2025-06-26'
+  date: 27 April - 3 May 2025
+  deadline: '2024-08-02'
+  full_name: 'ICSE: International Conference onSoftware Engineering'
+  id: icse_international_conference_onsoftware_engineering_2025
+  link: https://conf.researchr.org/home/icse-2025
+  note: main track cycle 2
+  place: Ottawa, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'ICSE: International Conference onSoftware Engineering'
   year: 2025
-  id: nips25
-  full_name: Conference on Neural Information Processing Systems
-  link: https://neurips.cc/Conferences/2024/Dates
-  deadline: 2025-04-01 23:59:59
-  timezone: UTC-8
-  place: San Diego, USA
-  date: December 2025
-  start: 2025-12-01
-  end: 2025-12-31
-  sub: [ 'ML' ]
-  note: More info <a href='https://neurips.cc/Conferences/2024/Dates'>here</a>.
-
-- title: ECAI
+- abstract_deadline: '2025-12-31'
+  date: 27 April - 3 May 2025
+  deadline: '2025-12-31'
+  full_name: 'ICSE: IDE Workshop'
+  id: icse_ide_workshop_2025
+  link: 3 September
+  note: workshop
+  place: Ottawa, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'ICSE: IDE Workshop'
   year: 2025
-  id: ecai25
-  full_name: "European Conference on Artificial Intelligence"
-  link: https://www.ecai2024.eu/
-  deadline: 2025-04-01 23:59:59
-  timezone: UTC-8
-  place: Bologna, Italy
+- abstract_deadline: '2024-11-07'
+  date: 27 April - 3 May 2025
+  deadline: '2024-11-07'
+  full_name: 'ICSE: Industry Challange Track'
+  id: icse_industry_challange_track_2024
+  link: https://conf.researchr.org/track/icse-2025/icse-2025-industry-challenge-track
+  note: sub track
+  place: Ottawa, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'ICSE: Industry Challange Track'
+  year: 2024
+- abstract_deadline: '2024-10-10'
+  date: 27 April - 3 May 2025
+  deadline: '2024-10-10'
+  full_name: 'ICSE: Tool Demonstration Track'
+  id: icse_tool_demonstration_track_2024
+  link: https://conf.researchr.org/track/icse-2025/icse-2025-demonstrations
+  note: sub track
+  place: Ottawa, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'ICSE: Tool Demonstration Track'
+  year: 2024
+- abstract_deadline: '2024-10-10'
+  date: 27 April - 3 May 2025
+  deadline: '2024-10-10'
+  full_name: 'ICSE: New Ideas and Emerging Results (NIER)'
+  id: icse_new_ideas_and_emerging_results_nier_2024
+  link: https://conf.researchr.org/track/icse-2025/icse-2025-nier
+  note: sub track
+  place: Ottawa, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'ICSE: New Ideas and Emerging Results (NIER)'
+  year: 2024
+- abstract_deadline: '2024-11-06'
+  date: 28 April - 29 May 2025
+  deadline: '2024-11-09'
+  full_name: 'MSR: Mining Software Repositories'
+  id: msr_mining_software_repositories_2024
+  link: https://2025.msrconf.org/
+  note: main track
+  place: Ottawa, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'MSR: Mining Software Repositories'
+  year: 2024
+- abstract_deadline: '2024-11-29'
+  date: 29 April - 29 May 2025
+  deadline: '2024-12-02'
+  full_name: 'MSR: Data and Tool Showcase Track'
+  id: msr_data_and_tool_showcase_track_2024
+  link: https://2025.msrconf.org/track/msr-2025-data-and-tool-showcase-track
+  note: sub track
+  place: Ottawa, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'MSR: Data and Tool Showcase Track'
+  year: 2024
+- abstract_deadline: '2025-04-01'
   date: October 27-31, 2025
-  start: 2025-10-27
-  end: 2025-10-31
-  sub: [ 'AI' ]
-  note: More info <a href='https://www.ecai2024.eu/'>here</a>.
-
-- title: EMNLP
+  deadline: '2025-04-01'
+  full_name: 'ESAI: European Conference on Artificial Intelligence'
+  id: esai_european_conference_on_artificial_intelligence_2025
+  link: https://www.ecai2024.eu/
+  note: main track
+  place: Bologna, Italy
+  sub: ML
+  timezone: UTC-12
+  title: 'ESAI: European Conference on Artificial Intelligence'
   year: 2025
-  id: emnlp25
-  full_name: Conference on Empirical Methods in Natural Language Processing
+- abstract_deadline: '2025-06-15'
+  date: ~November 2025
+  deadline: '2025-06-15'
+  full_name: 'EMNLP: Empirical Methods in Natural Language Processing'
+  id: emnlp_empirical_methods_in_natural_language_processing_2025
   link: https://2024.emnlp.org/
-  deadline: 2025-06-01 23:59:59
-  timezone: UTC-8
-  place: "?"
-  date: November 2025
-  start: 2025-11-01
-  end: 2025-11-30
-  sub: [ 'NLP' ]
-  note: More info <a href='https://2024.emnlp.org/'>here</a>.
-
-- title: ICLR
+  note: main track
+  place: '?'
+  sub: ML
+  timezone: UTC-12
+  title: 'EMNLP: Empirical Methods in Natural Language Processing'
   year: 2025
-  id: iclr25
-  full_name: International Conference on Learning Representations
+- abstract_deadline: '2025-08-05'
+  date: ~November 2025
+  deadline: '2025-08-05'
+  full_name: 'EMNLP: System Demonstration Track'
+  id: emnlp_system_demonstration_track_2025
+  link: https://2024.emnlp.org/calls/demos/
+  note: sub track
+  place: '?'
+  sub: ML
+  timezone: UTC-12
+  title: 'EMNLP: System Demonstration Track'
+  year: 2025
+- abstract_deadline: '2025-07-18'
+  date: ~November 2025
+  deadline: '2025-07-18'
+  full_name: 'EMNLP: Industry Track'
+  id: emnlp_industry_track_2025
+  link: https://2024.emnlp.org/calls/industry_track/
+  note: sub track
+  place: '?'
+  sub: ML
+  timezone: UTC-12
+  title: 'EMNLP: Industry Track'
+  year: 2025
+- abstract_deadline: '2024-09-27'
+  date: Apr 24 - 28 2025
+  deadline: '2024-10-01'
+  full_name: 'ICLR: International Conference on Learning Representations'
+  id: iclr_international_conference_on_learning_representations_2024
   link: https://iclr.cc/
-  deadline: 2025-10-01 23:59:59
-  timezone: UTC-8
+  note: main track
   place: Singapore
-  date: April 24 - 28, 2025
-  start: 2025-04-24
-  end: 2025-04-28
-  sub: [ 'ML' ]
-  note: More info <a href='https://iclr.cc/'>here</a>.
-
-- title: MSR
+  sub: ML
+  timezone: UTC-12
+  title: 'ICLR: International Conference on Learning Representations'
+  year: 2024
+- abstract_deadline: '2025-02-09'
+  date: Apr 24 - 28 2026
+  deadline: '2025-02-09'
+  full_name: 'ICLR: Generative Models for Decision Making'
+  id: iclr_generative_models_for_decision_making_2025
+  link: https://sites.google.com/view/genai4dm-iclr2024
+  note: workshop
+  place: Singapore
+  sub: ML
+  timezone: UTC-12
+  title: 'ICLR: Generative Models for Decision Making'
   year: 2025
-  id: msr25
-  full_name: International Conference on Mining Software Repositories
-  link: https://2025.msrconf.org/track/msr-2025-papers
-  deadline: 2025-11-01 23:59:59
-  timezone: UTC-8
-  place: Ottawa, Canada
-  date: April 28 - May 29, 2025
-  start: 2025-04-28
-  end: 2025-05-29
-  sub: [ 'SE' ]
-  note: More info <a href='https://2025.msrconf.org/track/msr-2025-papers'>here</a>.
+- abstract_deadline: '2025-02-11'
+  date: Apr 24 - 28 2027
+  deadline: '2025-02-11'
+  full_name: 'ICLR: Workshop on LLM Agents'
+  id: iclr_workshop_on_llm_agents_2025
+  link: https://llmagents.github.io/
+  note: workshop
+  place: Singapore
+  sub: ML
+  timezone: UTC-12
+  title: 'ICLR: Workshop on LLM Agents'
+  year: 2025
+- abstract_deadline: '2025-06-20'
+  date: September 8 - 13 2025
+  deadline: '2025-06-20'
+  full_name: 'ICSME: International Conference on Software Maintenance and Evolution'
+  id: icsme_international_conference_on_software_maintenance_and_evolution_2025
+  link: https://conf.researchr.org/home/icsme-2024
+  note: main track
+  place: Auckland, New Zealand
+  sub: ML
+  timezone: UTC-12
+  title: 'ICSME: International Conference on Software Maintenance and Evolution'
+  year: 2025
+- abstract_deadline: '2025-06-20'
+  date: September 8 - 13 2025
+  deadline: '2025-06-20'
+  full_name: 'ICSME: Industry Challange Track'
+  id: icsme_industry_challange_track_2025
+  link: https://conf.researchr.org/track/icsme-2024/icsme-2024-industry-track
+  note: sub track
+  place: Auckland, New Zealand
+  sub: ML
+  timezone: UTC-12
+  title: 'ICSME: Industry Challange Track'
+  year: 2025
+- abstract_deadline: '2025-06-20'
+  date: September 8 - 13 2025
+  deadline: '2025-06-20'
+  full_name: 'ICSME: Tool Demonstration Track'
+  id: icsme_tool_demonstration_track_2025
+  link: https://conf.researchr.org/track/icsme-2024/icsme-2024-tool-demo-track
+  note: sub track
+  place: Auckland, New Zealand
+  sub: ML
+  timezone: UTC-12
+  title: 'ICSME: Tool Demonstration Track'
+  year: 2025
+- abstract_deadline: '2024-10-04'
+  date: March 4 - 7 2025
+  deadline: '2024-10-11'
+  full_name: 'SANER: International Conference on Software Analysis, Evolution and
+    Reengineering'
+  id: saner_international_conference_on_software_analysis_evolution_and_reengineering_2024
+  link: https://conf.researchr.org/home/saner-2025
+  note: main track
+  place: Montréal, Québec, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'SANER: International Conference on Software Analysis, Evolution and Reengineering'
+  year: 2024
+- abstract_deadline: '2024-11-01'
+  date: March 4 - 7 2025
+  deadline: '2024-11-08'
+  full_name: 'SANER: Industry Track'
+  id: saner_industry_track_2024
+  link: https://conf.researchr.org/track/saner-2025/saner-2025-industrial-track
+  note: sub track
+  place: Montréal, Québec, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'SANER: Industry Track'
+  year: 2024
+- abstract_deadline: '2024-11-22'
+  date: March 4 - 7 2025
+  deadline: '2024-11-23'
+  full_name: 'SANER: Tool Demonstration Track'
+  id: saner_tool_demonstration_track_2024
+  link: https://conf.researchr.org/track/saner-2025/saner-2025-tool-demo-track
+  note: sub track
+  place: Montréal, Québec, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'SANER: Tool Demonstration Track'
+  year: 2024
+- abstract_deadline: '2024-11-22'
+  date: March 4 - 7 2025
+  deadline: '2024-11-29'
+  full_name: 'SANER: Workshops Track'
+  id: saner_workshops_track_2024
+  link: https://conf.researchr.org/track/saner-2025/saner-2025-workshops-track
+  note: sub track
+  place: Montréal, Québec, Canada
+  sub: ML
+  timezone: UTC-12
+  title: 'SANER: Workshops Track'
+  year: 2024
+- abstract_deadline: '2024-09-12'
+  date: June 23 - 27 2025
+  deadline: '2024-09-12'
+  full_name: 'FSE: Foundations of Software Engineering'
+  id: fse_foundations_of_software_engineering_2024
+  link: https://conf.researchr.org/series/fse
+  note: main track
+  place: Trondheim, Norway
+  sub: ML
+  timezone: UTC-12
+  title: 'FSE: Foundations of Software Engineering'
+  year: 2024
+- abstract_deadline: '2025-01-29'
+  date: June 23 - 27 2025
+  deadline: '2025-01-29'
+  full_name: 'FSE: Industry Track'
+  id: fse_industry_track_2025
+  link: https://2024.esec-fse.org/track/fse-2024-industry?
+  note: sub track
+  place: Trondheim, Norway
+  sub: ML
+  timezone: UTC-12
+  title: 'FSE: Industry Track'
+  year: 2025
+- abstract_deadline: '2025-02-08'
+  date: June 23 - 27 2025
+  deadline: '2025-02-08'
+  full_name: 'FSE: Tool Track'
+  id: fse_tool_track_2025
+  link: https://2024.esec-fse.org/track/fse-2024-demonstrations?
+  note: sub track
+  place: Trondheim, Norway
+  sub: ML
+  timezone: UTC-12
+  title: 'FSE: Tool Track'
+  year: 2025
+- abstract_deadline: '2025-12-31'
+  date: November 16 - 20
+  deadline: '2025-12-31'
+  full_name: 'ASE: Automated Software Engineering'
+  id: ase_automated_software_engineering_2025
+  link: https://conf.researchr.org/home/ase-2024
+  note: main track
+  place: Seoul, South Korea
+  sub: ML
+  timezone: UTC-12
+  title: 'ASE: Automated Software Engineering'
+  year: 2025
+- abstract_deadline: '2025-07-15'
+  date: November 16 - 21
+  deadline: '2025-07-15'
+  full_name: 'ASE: Industry Track'
+  id: ase_industry_track_2025
+  link: https://conf.researchr.org/track/ase-2024/ase-2024-industry-showcase
+  note: sub track
+  place: Seoul, South Korea
+  sub: ML
+  timezone: UTC-12
+  title: 'ASE: Industry Track'
+  year: 2025
+- abstract_deadline: '2025-06-26'
+  date: November 16 - 22
+  deadline: '2025-06-26'
+  full_name: 'ASE: Tool Track'
+  id: ase_tool_track_2025
+  link: https://conf.researchr.org/track/ase-2024/ase-2024-tool-demonstrations
+  note: sub track
+  place: Seoul, South Korea
+  sub: ML
+  timezone: UTC-12
+  title: 'ASE: Tool Track'
+  year: 2025
