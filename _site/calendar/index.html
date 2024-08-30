@@ -9,11 +9,11 @@
 <meta name="description" content="Countdowns to conference deadlines">
 <meta name="author" content="Konstantin Grotov">
 <meta name="keywords" content="HCI, deadlines, conference">
-<link rel="stylesheet" type="text/css" href=" /static/css/js-year-calendar.min.css?t=1725029775" media="screen,projection">
+<link rel="stylesheet" type="text/css" href=" /static/css/js-year-calendar.min.css?t=1725031227" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href=" /static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href=" /static/css/deadlines.css?t=1725029775" media="screen,projection">
-<link rel="stylesheet" type="text/css" href=" /static/css/calendar.css?t=1725029775" media="screen,projection">
+<link rel="stylesheet" type="text/css" href=" /static/css/deadlines.css?t=1725031227" media="screen,projection">
+<link rel="stylesheet" type="text/css" href=" /static/css/calendar.css?t=1725031227" media="screen,projection">
 
 <link rel="shortcut icon" href=" /static/img/favicon.png">
 
@@ -102,6 +102,26 @@
                   Visualization (ML)
                 </option>
                 
+                <option value="main_track" id="main_track-checkbox">
+                  Main Track (main_track)
+                </option>
+                
+                <option value="sub_track" id="sub_track-checkbox">
+                  Sub Track (sub_track)
+                </option>
+                
+                <option value="workshop" id="workshop-checkbox">
+                  Workshop (workshop)
+                </option>
+                
+                <option value="main_track_cycle_1" id="main_track_cycle_1-checkbox">
+                  Main Track Cycle 1 (main_track_cycle_1)
+                </option>
+                
+                <option value="main_track_cycle_2" id="main_track_cycle_2-checkbox">
+                  Main Track Cycle 2 (main_track_cycle_2)
+                </option>
+                
               </select>
             </div>
           </div>
@@ -177,6 +197,26 @@
       
       <div class="col-6 col-sm-4">
         <span class="color-box" style="background-color: #a432a8"></span> Visualization
+      </div>
+      
+      <div class="col-6 col-sm-4">
+        <span class="color-box" style="background-color: #147df5"></span> Main Track
+      </div>
+      
+      <div class="col-6 col-sm-4">
+        <span class="color-box" style="background-color: #147df5"></span> Sub Track
+      </div>
+      
+      <div class="col-6 col-sm-4">
+        <span class="color-box" style="background-color: #147df5"></span> Workshop
+      </div>
+      
+      <div class="col-6 col-sm-4">
+        <span class="color-box" style="background-color: #147df5"></span> Main Track Cycle 1
+      </div>
+      
+      <div class="col-6 col-sm-4">
+        <span class="color-box" style="background-color: #147df5"></span> Main Track Cycle 2
       </div>
       
     </div>
@@ -263,7 +303,7 @@ function createCalendarFromObject(data) {
 var subs = [];
 var _all_subs = [];
 // Get all subs
-var conf_type_data = [{"sub":"AI","color":"#147df5"},{"name":"Visualization","sub":"ML","color":"#a432a8"}];
+var conf_type_data = [{"sub":"AI","color":"#147df5"},{"name":"Visualization","sub":"ML","color":"#a432a8"},{"sub":"main_track","name":"Main Track","color":"#147df5"},{"sub":"sub_track","name":"Sub Track","color":"#147df5"},{"sub":"workshop","name":"Workshop","color":"#147df5"},{"sub":"main_track_cycle_1","name":"Main Track Cycle 1","color":"#147df5"},{"sub":"main_track_cycle_2","name":"Main Track Cycle 2","color":"#147df5"}];
 var sub2name = {}; var name2sub = {};
 for (var i = 0; i < conf_type_data.length; i++) {
     _all_subs[i] = conf_type_data[i]['sub'];
@@ -415,7 +455,7 @@ function load_conference_list() {
       location: "Philadelphia, USA",
       date: "February 25 - March 4 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-08-15"),
       endDate: Date.parse("2024-08-15"),
     });
@@ -429,7 +469,7 @@ function load_conference_list() {
       location: "Philadelphia, USA",
       date: "February 25 - March 4 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-08-07"),
       endDate: Date.parse("2024-08-07"),
     });
@@ -443,7 +483,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -454,7 +502,7 @@ function load_conference_list() {
         location: "Philadelphia, USA",
         date: "February 25 - March 4 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -469,7 +517,7 @@ function load_conference_list() {
       location: "Philadelphia, USA",
       date: "February 25 - March 4 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-08-15"),
       endDate: Date.parse("2024-08-15"),
     });
@@ -483,7 +531,7 @@ function load_conference_list() {
       location: "Philadelphia, USA",
       date: "February 25 - March 4 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-08-07"),
       endDate: Date.parse("2024-08-07"),
     });
@@ -497,7 +545,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -508,7 +564,7 @@ function load_conference_list() {
         location: "Philadelphia, USA",
         date: "February 25 - March 4 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -523,7 +579,7 @@ function load_conference_list() {
       location: "Philadelphia, USA",
       date: "February 25 - March 4 2026",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-10-03"),
       endDate: Date.parse("2024-10-03"),
     });
@@ -537,7 +593,7 @@ function load_conference_list() {
       location: "Philadelphia, USA",
       date: "February 25 - March 4 2026",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-10-03"),
       endDate: Date.parse("2024-10-03"),
     });
@@ -551,7 +607,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -562,7 +626,7 @@ function load_conference_list() {
         location: "Philadelphia, USA",
         date: "February 25 - March 4 2026",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -577,7 +641,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-05-22"),
       endDate: Date.parse("2024-05-22"),
     });
@@ -591,7 +655,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-05-22"),
       endDate: Date.parse("2024-05-22"),
     });
@@ -605,7 +669,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -616,7 +688,7 @@ function load_conference_list() {
         location: "San Diego, USA",
         date: "December 9 - 16 2024",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -631,7 +703,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-06-05"),
       endDate: Date.parse("2024-06-05"),
     });
@@ -645,7 +717,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-05-29"),
       endDate: Date.parse("2024-05-29"),
     });
@@ -659,7 +731,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -670,7 +750,7 @@ function load_conference_list() {
         location: "San Diego, USA",
         date: "December 9 - 16 2024",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -685,7 +765,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -699,7 +779,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -713,7 +793,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -724,7 +812,7 @@ function load_conference_list() {
         location: "San Diego, USA",
         date: "December 9 - 16 2024",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -739,7 +827,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -753,7 +841,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -767,7 +855,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -778,7 +874,7 @@ function load_conference_list() {
         location: "San Diego, USA",
         date: "December 9 - 16 2024",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -793,7 +889,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -807,7 +903,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -821,7 +917,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -832,7 +936,7 @@ function load_conference_list() {
         location: "San Diego, USA",
         date: "December 9 - 16 2024",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -847,7 +951,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -861,7 +965,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -875,7 +979,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -886,7 +998,7 @@ function load_conference_list() {
         location: "San Diego, USA",
         date: "December 9 - 16 2024",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -901,7 +1013,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -915,7 +1027,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -929,7 +1041,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -940,7 +1060,7 @@ function load_conference_list() {
         location: "San Diego, USA",
         date: "December 9 - 16 2024",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -955,7 +1075,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -969,7 +1089,7 @@ function load_conference_list() {
       location: "San Diego, USA",
       date: "December 9 - 16 2024",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -983,7 +1103,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -994,7 +1122,7 @@ function load_conference_list() {
         location: "San Diego, USA",
         date: "December 9 - 16 2024",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1009,7 +1137,7 @@ function load_conference_list() {
       location: "Detroit, Michigan",
       date: "May 19 - 23 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-10-16"),
       endDate: Date.parse("2024-10-16"),
     });
@@ -1023,7 +1151,7 @@ function load_conference_list() {
       location: "Detroit, Michigan",
       date: "May 19 - 23 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-10-09"),
       endDate: Date.parse("2024-10-09"),
     });
@@ -1037,7 +1165,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1048,7 +1184,7 @@ function load_conference_list() {
         location: "Detroit, Michigan",
         date: "May 19 - 23 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1063,7 +1199,7 @@ function load_conference_list() {
       location: "Albuquerque, New Mexico",
       date: "April 29 - May 4 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-10-15"),
       endDate: Date.parse("2024-10-15"),
     });
@@ -1077,7 +1213,7 @@ function load_conference_list() {
       location: "Albuquerque, New Mexico",
       date: "April 29 - May 4 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-10-15"),
       endDate: Date.parse("2024-10-15"),
     });
@@ -1091,7 +1227,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1102,7 +1246,7 @@ function load_conference_list() {
         location: "Albuquerque, New Mexico",
         date: "April 29 - May 4 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1117,7 +1261,7 @@ function load_conference_list() {
       location: "Rome, Italy",
       date: "June 30 - July 5 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-01-15"),
       endDate: Date.parse("2025-01-15"),
     });
@@ -1131,7 +1275,7 @@ function load_conference_list() {
       location: "Rome, Italy",
       date: "June 30 - July 5 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-01-15"),
       endDate: Date.parse("2025-01-15"),
     });
@@ -1145,7 +1289,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1156,7 +1308,7 @@ function load_conference_list() {
         location: "Rome, Italy",
         date: "June 30 - July 5 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1171,7 +1323,7 @@ function load_conference_list() {
       location: "Montreal, Canada",
       date: "~August 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-01-17"),
       endDate: Date.parse("2025-01-17"),
     });
@@ -1185,7 +1337,7 @@ function load_conference_list() {
       location: "Montreal, Canada",
       date: "~August 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-01-10"),
       endDate: Date.parse("2025-01-10"),
     });
@@ -1199,7 +1351,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1210,7 +1370,7 @@ function load_conference_list() {
         location: "Montreal, Canada",
         date: "~August 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1225,7 +1385,7 @@ function load_conference_list() {
       location: "Vancouver, Canada",
       date: "July 11 - 19 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-02-01"),
       endDate: Date.parse("2025-02-01"),
     });
@@ -1239,7 +1399,7 @@ function load_conference_list() {
       location: "Vancouver, Canada",
       date: "July 11 - 19 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-02-01"),
       endDate: Date.parse("2025-02-01"),
     });
@@ -1253,7 +1413,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1264,7 +1432,7 @@ function load_conference_list() {
         location: "Vancouver, Canada",
         date: "July 11 - 19 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1279,7 +1447,7 @@ function load_conference_list() {
       location: "Vancouver, Canada",
       date: "July 11 - 19 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-05-26"),
       endDate: Date.parse("2025-05-26"),
     });
@@ -1293,7 +1461,7 @@ function load_conference_list() {
       location: "Vancouver, Canada",
       date: "July 11 - 19 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-05-26"),
       endDate: Date.parse("2025-05-26"),
     });
@@ -1307,7 +1475,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1318,7 +1494,7 @@ function load_conference_list() {
         location: "Vancouver, Canada",
         date: "July 11 - 19 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1333,7 +1509,7 @@ function load_conference_list() {
       location: "Vancouver, Canada",
       date: "July 11 - 19 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-05-27"),
       endDate: Date.parse("2025-05-27"),
     });
@@ -1347,7 +1523,7 @@ function load_conference_list() {
       location: "Vancouver, Canada",
       date: "July 11 - 19 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-05-27"),
       endDate: Date.parse("2025-05-27"),
     });
@@ -1361,7 +1537,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1372,7 +1556,7 @@ function load_conference_list() {
         location: "Vancouver, Canada",
         date: "July 11 - 19 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1387,7 +1571,7 @@ function load_conference_list() {
       location: "Vienna, Austria",
       date: "July 27 - August 1 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-02-15"),
       endDate: Date.parse("2025-02-15"),
     });
@@ -1401,7 +1585,7 @@ function load_conference_list() {
       location: "Vienna, Austria",
       date: "July 27 - August 1 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-02-15"),
       endDate: Date.parse("2025-02-15"),
     });
@@ -1415,7 +1599,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1426,7 +1618,7 @@ function load_conference_list() {
         location: "Vienna, Austria",
         date: "July 27 - August 1 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1441,7 +1633,7 @@ function load_conference_list() {
       location: "Vienna, Austria",
       date: "July 27 - August 1 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-05-21"),
       endDate: Date.parse("2025-05-21"),
     });
@@ -1455,7 +1647,7 @@ function load_conference_list() {
       location: "Vienna, Austria",
       date: "July 27 - August 1 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-05-21"),
       endDate: Date.parse("2025-05-21"),
     });
@@ -1469,7 +1661,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1480,7 +1680,7 @@ function load_conference_list() {
         location: "Vienna, Austria",
         date: "July 27 - August 1 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1495,7 +1695,7 @@ function load_conference_list() {
       location: "?",
       date: "~March 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-10-15"),
       endDate: Date.parse("2025-10-15"),
     });
@@ -1509,7 +1709,7 @@ function load_conference_list() {
       location: "?",
       date: "~March 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-10-15"),
       endDate: Date.parse("2025-10-15"),
     });
@@ -1523,7 +1723,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1534,7 +1742,7 @@ function load_conference_list() {
         location: "?",
         date: "~March 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1549,7 +1757,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track_cycle_1",
       startDate: Date.parse("2024-03-22"),
       endDate: Date.parse("2024-03-22"),
     });
@@ -1563,7 +1771,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track_cycle_1",
       startDate: Date.parse("2024-03-15"),
       endDate: Date.parse("2024-03-15"),
     });
@@ -1577,7 +1785,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1588,7 +1804,7 @@ function load_conference_list() {
         location: "Ottawa, Canada",
         date: "27 April - 3 May 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track_cycle_1",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1603,7 +1819,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track_cycle_2",
       startDate: Date.parse("2024-08-02"),
       endDate: Date.parse("2024-08-02"),
     });
@@ -1617,7 +1833,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track_cycle_2",
       startDate: Date.parse("2025-06-26"),
       endDate: Date.parse("2025-06-26"),
     });
@@ -1631,7 +1847,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1642,7 +1866,7 @@ function load_conference_list() {
         location: "Ottawa, Canada",
         date: "27 April - 3 May 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track_cycle_2",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1657,7 +1881,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-12-31"),
       endDate: Date.parse("2025-12-31"),
     });
@@ -1671,7 +1895,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-12-31"),
       endDate: Date.parse("2025-12-31"),
     });
@@ -1685,7 +1909,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1696,7 +1928,7 @@ function load_conference_list() {
         location: "Ottawa, Canada",
         date: "27 April - 3 May 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1711,7 +1943,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-11-07"),
       endDate: Date.parse("2024-11-07"),
     });
@@ -1725,7 +1957,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-11-07"),
       endDate: Date.parse("2024-11-07"),
     });
@@ -1739,7 +1971,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1750,7 +1990,7 @@ function load_conference_list() {
         location: "Ottawa, Canada",
         date: "27 April - 3 May 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1765,7 +2005,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-10-10"),
       endDate: Date.parse("2024-10-10"),
     });
@@ -1779,7 +2019,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-10-10"),
       endDate: Date.parse("2024-10-10"),
     });
@@ -1793,7 +2033,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1804,7 +2052,7 @@ function load_conference_list() {
         location: "Ottawa, Canada",
         date: "27 April - 3 May 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1819,7 +2067,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-10-10"),
       endDate: Date.parse("2024-10-10"),
     });
@@ -1833,7 +2081,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "27 April - 3 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-10-10"),
       endDate: Date.parse("2024-10-10"),
     });
@@ -1847,7 +2095,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1858,7 +2114,7 @@ function load_conference_list() {
         location: "Ottawa, Canada",
         date: "27 April - 3 May 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1873,7 +2129,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "28 April - 29 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-11-09"),
       endDate: Date.parse("2024-11-09"),
     });
@@ -1887,7 +2143,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "28 April - 29 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-11-06"),
       endDate: Date.parse("2024-11-06"),
     });
@@ -1901,7 +2157,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1912,7 +2176,7 @@ function load_conference_list() {
         location: "Ottawa, Canada",
         date: "28 April - 29 May 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1927,7 +2191,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "29 April - 29 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-12-02"),
       endDate: Date.parse("2024-12-02"),
     });
@@ -1941,7 +2205,7 @@ function load_conference_list() {
       location: "Ottawa, Canada",
       date: "29 April - 29 May 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-11-29"),
       endDate: Date.parse("2024-11-29"),
     });
@@ -1955,7 +2219,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -1966,7 +2238,7 @@ function load_conference_list() {
         location: "Ottawa, Canada",
         date: "29 April - 29 May 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -1981,7 +2253,7 @@ function load_conference_list() {
       location: "Bologna, Italy",
       date: "October 27-31, 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-04-01"),
       endDate: Date.parse("2025-04-01"),
     });
@@ -1995,7 +2267,7 @@ function load_conference_list() {
       location: "Bologna, Italy",
       date: "October 27-31, 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-04-01"),
       endDate: Date.parse("2025-04-01"),
     });
@@ -2009,7 +2281,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2020,7 +2300,7 @@ function load_conference_list() {
         location: "Bologna, Italy",
         date: "October 27-31, 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2035,7 +2315,7 @@ function load_conference_list() {
       location: "?",
       date: "~November 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-06-15"),
       endDate: Date.parse("2025-06-15"),
     });
@@ -2049,7 +2329,7 @@ function load_conference_list() {
       location: "?",
       date: "~November 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-06-15"),
       endDate: Date.parse("2025-06-15"),
     });
@@ -2063,7 +2343,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2074,7 +2362,7 @@ function load_conference_list() {
         location: "?",
         date: "~November 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2089,7 +2377,7 @@ function load_conference_list() {
       location: "?",
       date: "~November 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-08-05"),
       endDate: Date.parse("2025-08-05"),
     });
@@ -2103,7 +2391,7 @@ function load_conference_list() {
       location: "?",
       date: "~November 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-08-05"),
       endDate: Date.parse("2025-08-05"),
     });
@@ -2117,7 +2405,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2128,7 +2424,7 @@ function load_conference_list() {
         location: "?",
         date: "~November 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2143,7 +2439,7 @@ function load_conference_list() {
       location: "?",
       date: "~November 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-07-18"),
       endDate: Date.parse("2025-07-18"),
     });
@@ -2157,7 +2453,7 @@ function load_conference_list() {
       location: "?",
       date: "~November 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-07-18"),
       endDate: Date.parse("2025-07-18"),
     });
@@ -2171,7 +2467,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2182,7 +2486,7 @@ function load_conference_list() {
         location: "?",
         date: "~November 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2197,7 +2501,7 @@ function load_conference_list() {
       location: "Singapore",
       date: "Apr 24 - 28 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-10-01"),
       endDate: Date.parse("2024-10-01"),
     });
@@ -2211,7 +2515,7 @@ function load_conference_list() {
       location: "Singapore",
       date: "Apr 24 - 28 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-09-27"),
       endDate: Date.parse("2024-09-27"),
     });
@@ -2225,7 +2529,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2236,7 +2548,7 @@ function load_conference_list() {
         location: "Singapore",
         date: "Apr 24 - 28 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2251,7 +2563,7 @@ function load_conference_list() {
       location: "Singapore",
       date: "Apr 24 - 28 2026",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-02-09"),
       endDate: Date.parse("2025-02-09"),
     });
@@ -2265,7 +2577,7 @@ function load_conference_list() {
       location: "Singapore",
       date: "Apr 24 - 28 2026",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-02-09"),
       endDate: Date.parse("2025-02-09"),
     });
@@ -2279,7 +2591,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2290,7 +2610,7 @@ function load_conference_list() {
         location: "Singapore",
         date: "Apr 24 - 28 2026",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2305,7 +2625,7 @@ function load_conference_list() {
       location: "Singapore",
       date: "Apr 24 - 28 2027",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-02-11"),
       endDate: Date.parse("2025-02-11"),
     });
@@ -2319,7 +2639,7 @@ function load_conference_list() {
       location: "Singapore",
       date: "Apr 24 - 28 2027",
       hindex: "",
-      subject: "ML",
+      subject: "MLworkshop",
       startDate: Date.parse("2025-02-11"),
       endDate: Date.parse("2025-02-11"),
     });
@@ -2333,7 +2653,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2344,7 +2672,7 @@ function load_conference_list() {
         location: "Singapore",
         date: "Apr 24 - 28 2027",
         hindex: "",
-        subject: "ML",
+        subject: "MLworkshop",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2359,7 +2687,7 @@ function load_conference_list() {
       location: "Auckland, New Zealand",
       date: "September 8 - 13 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-06-20"),
       endDate: Date.parse("2025-06-20"),
     });
@@ -2373,7 +2701,7 @@ function load_conference_list() {
       location: "Auckland, New Zealand",
       date: "September 8 - 13 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-06-20"),
       endDate: Date.parse("2025-06-20"),
     });
@@ -2387,7 +2715,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2398,7 +2734,7 @@ function load_conference_list() {
         location: "Auckland, New Zealand",
         date: "September 8 - 13 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2413,7 +2749,7 @@ function load_conference_list() {
       location: "Auckland, New Zealand",
       date: "September 8 - 13 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-06-20"),
       endDate: Date.parse("2025-06-20"),
     });
@@ -2427,7 +2763,7 @@ function load_conference_list() {
       location: "Auckland, New Zealand",
       date: "September 8 - 13 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-06-20"),
       endDate: Date.parse("2025-06-20"),
     });
@@ -2441,7 +2777,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2452,7 +2796,7 @@ function load_conference_list() {
         location: "Auckland, New Zealand",
         date: "September 8 - 13 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2467,7 +2811,7 @@ function load_conference_list() {
       location: "Auckland, New Zealand",
       date: "September 8 - 13 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-06-20"),
       endDate: Date.parse("2025-06-20"),
     });
@@ -2481,7 +2825,7 @@ function load_conference_list() {
       location: "Auckland, New Zealand",
       date: "September 8 - 13 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-06-20"),
       endDate: Date.parse("2025-06-20"),
     });
@@ -2495,7 +2839,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2506,7 +2858,7 @@ function load_conference_list() {
         location: "Auckland, New Zealand",
         date: "September 8 - 13 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2521,7 +2873,7 @@ function load_conference_list() {
       location: "Montréal, Québec, Canada",
       date: "March 4 - 7 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-10-11"),
       endDate: Date.parse("2024-10-11"),
     });
@@ -2535,7 +2887,7 @@ function load_conference_list() {
       location: "Montréal, Québec, Canada",
       date: "March 4 - 7 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-10-04"),
       endDate: Date.parse("2024-10-04"),
     });
@@ -2549,7 +2901,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2560,7 +2920,7 @@ function load_conference_list() {
         location: "Montréal, Québec, Canada",
         date: "March 4 - 7 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2575,7 +2935,7 @@ function load_conference_list() {
       location: "Montréal, Québec, Canada",
       date: "March 4 - 7 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-11-08"),
       endDate: Date.parse("2024-11-08"),
     });
@@ -2589,7 +2949,7 @@ function load_conference_list() {
       location: "Montréal, Québec, Canada",
       date: "March 4 - 7 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-11-01"),
       endDate: Date.parse("2024-11-01"),
     });
@@ -2603,7 +2963,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2614,7 +2982,7 @@ function load_conference_list() {
         location: "Montréal, Québec, Canada",
         date: "March 4 - 7 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2629,7 +2997,7 @@ function load_conference_list() {
       location: "Montréal, Québec, Canada",
       date: "March 4 - 7 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-11-23"),
       endDate: Date.parse("2024-11-23"),
     });
@@ -2643,7 +3011,7 @@ function load_conference_list() {
       location: "Montréal, Québec, Canada",
       date: "March 4 - 7 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-11-22"),
       endDate: Date.parse("2024-11-22"),
     });
@@ -2657,7 +3025,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2668,7 +3044,7 @@ function load_conference_list() {
         location: "Montréal, Québec, Canada",
         date: "March 4 - 7 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2683,7 +3059,7 @@ function load_conference_list() {
       location: "Montréal, Québec, Canada",
       date: "March 4 - 7 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-11-29"),
       endDate: Date.parse("2024-11-29"),
     });
@@ -2697,7 +3073,7 @@ function load_conference_list() {
       location: "Montréal, Québec, Canada",
       date: "March 4 - 7 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2024-11-22"),
       endDate: Date.parse("2024-11-22"),
     });
@@ -2711,7 +3087,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2722,7 +3106,7 @@ function load_conference_list() {
         location: "Montréal, Québec, Canada",
         date: "March 4 - 7 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2737,7 +3121,7 @@ function load_conference_list() {
       location: "Trondheim, Norway",
       date: "June 23 - 27 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-09-12"),
       endDate: Date.parse("2024-09-12"),
     });
@@ -2751,7 +3135,7 @@ function load_conference_list() {
       location: "Trondheim, Norway",
       date: "June 23 - 27 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2024-09-12"),
       endDate: Date.parse("2024-09-12"),
     });
@@ -2765,7 +3149,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2776,7 +3168,7 @@ function load_conference_list() {
         location: "Trondheim, Norway",
         date: "June 23 - 27 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2791,7 +3183,7 @@ function load_conference_list() {
       location: "Trondheim, Norway",
       date: "June 23 - 27 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-01-29"),
       endDate: Date.parse("2025-01-29"),
     });
@@ -2805,7 +3197,7 @@ function load_conference_list() {
       location: "Trondheim, Norway",
       date: "June 23 - 27 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-01-29"),
       endDate: Date.parse("2025-01-29"),
     });
@@ -2819,7 +3211,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2830,7 +3230,7 @@ function load_conference_list() {
         location: "Trondheim, Norway",
         date: "June 23 - 27 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2845,7 +3245,7 @@ function load_conference_list() {
       location: "Trondheim, Norway",
       date: "June 23 - 27 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-02-08"),
       endDate: Date.parse("2025-02-08"),
     });
@@ -2859,7 +3259,7 @@ function load_conference_list() {
       location: "Trondheim, Norway",
       date: "June 23 - 27 2025",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-02-08"),
       endDate: Date.parse("2025-02-08"),
     });
@@ -2873,7 +3273,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2884,7 +3292,7 @@ function load_conference_list() {
         location: "Trondheim, Norway",
         date: "June 23 - 27 2025",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2899,7 +3307,7 @@ function load_conference_list() {
       location: "Seoul, South Korea",
       date: "November 16 - 20",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-12-31"),
       endDate: Date.parse("2025-12-31"),
     });
@@ -2913,7 +3321,7 @@ function load_conference_list() {
       location: "Seoul, South Korea",
       date: "November 16 - 20",
       hindex: "",
-      subject: "ML",
+      subject: "MLmain_track",
       startDate: Date.parse("2025-12-31"),
       endDate: Date.parse("2025-12-31"),
     });
@@ -2927,7 +3335,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2938,7 +3354,7 @@ function load_conference_list() {
         location: "Seoul, South Korea",
         date: "November 16 - 20",
         hindex: "",
-        subject: "ML",
+        subject: "MLmain_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -2953,7 +3369,7 @@ function load_conference_list() {
       location: "Seoul, South Korea",
       date: "November 16 - 21",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-07-15"),
       endDate: Date.parse("2025-07-15"),
     });
@@ -2967,7 +3383,7 @@ function load_conference_list() {
       location: "Seoul, South Korea",
       date: "November 16 - 21",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-07-15"),
       endDate: Date.parse("2025-07-15"),
     });
@@ -2981,7 +3397,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -2992,7 +3416,7 @@ function load_conference_list() {
         location: "Seoul, South Korea",
         date: "November 16 - 21",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });
@@ -3007,7 +3431,7 @@ function load_conference_list() {
       location: "Seoul, South Korea",
       date: "November 16 - 22",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-06-26"),
       endDate: Date.parse("2025-06-26"),
     });
@@ -3021,7 +3445,7 @@ function load_conference_list() {
       location: "Seoul, South Korea",
       date: "November 16 - 22",
       hindex: "",
-      subject: "ML",
+      subject: "MLsub_track",
       startDate: Date.parse("2025-06-26"),
       endDate: Date.parse("2025-06-26"),
     });
@@ -3035,7 +3459,15 @@ function load_conference_list() {
             
       
             
-                    color = "#a432a8";
+      
+            
+      
+            
+      
+            
+      
+            
+      
             
       
       conf_list_all.push({
@@ -3046,7 +3478,7 @@ function load_conference_list() {
         location: "Seoul, South Korea",
         date: "November 16 - 22",
         hindex: "",
-        subject: "ML",
+        subject: "MLsub_track",
         startDate: Date.parse(""),
         endDate: Date.parse(""),
       });

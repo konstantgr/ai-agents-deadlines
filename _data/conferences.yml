@@ -7,7 +7,9 @@
   link: https://aaai.org/conference/aaai/aaai-25/
   note: main track
   place: Philadelphia, USA
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'AAAI: National Conference of the American Association for Artificial Intelligence'
   year: 2024
@@ -19,7 +21,9 @@
   link: https://aaai.org/conference/aaai/aaai-25/ai-alignment-call/
   note: sub track
   place: Philadelphia, USA
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'AAAI: Special Track on AI Alignment'
   year: 2024
@@ -31,7 +35,9 @@
   link: https://aaai.org/conference/aaai/aaai-25/demo-program-call/
   note: sub track
   place: Philadelphia, USA
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'AAAI: Demonstration Track'
   year: 2024
@@ -43,7 +49,9 @@
   link: https://neurips.cc/
   note: main track
   place: San Diego, USA
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'NIPS: Annual Conference on Neural Information Processing Systems'
   year: 2024
@@ -55,7 +63,9 @@
   link: https://neurips.cc/Conferences/2024/CallForDatasetsBenchmarks
   note: sub track
   place: San Diego, USA
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'NIPS: Datasets and Benchmarks Track'
   year: 2024
@@ -67,7 +77,9 @@
   link: https://sites.google.com/view/fmdm-neurips23/home?authuser=0
   note: workshop
   place: San Diego, USA
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'NIPS: Foundation Models for Decision Making'
   year: 2024
@@ -79,7 +91,9 @@
   link: https://an-instructive-workshop.github.io/
   note: workshop
   place: San Diego, USA
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'NIPS: Instruction Tuning and Instruction Following'
   year: 2024
@@ -91,7 +105,9 @@
   link: https://sites.google.com/view/aloe2023/home
   note: workshop
   place: San Diego, USA
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'NIPS: Agent Learning in Open-Endedness (ALOE)'
   year: 2024
@@ -103,7 +119,9 @@
   link: https://neurips2023-enlsp.github.io/index.html#
   note: workshop
   place: San Diego, USA
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'NIPS: Efficient Natural Language and Speech Processing (ENLSP)'
   year: 2024
@@ -115,7 +133,9 @@
   link: https://aair-lab.github.io/genplan23/
   note: workshop
   place: San Diego, USA
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'NIPS: Generalization in Planning'
   year: 2024
@@ -127,7 +147,9 @@
   link: https://sites.google.com/view/masec
   note: workshop
   place: San Diego, USA
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'NIPS: Multi-Agent Security: Security as Key to AI Safety'
   year: 2024
@@ -140,7 +162,9 @@
   link: https://aamas2025.org/#:~:text=AAMAS%202025%20Detroit&text=The%2024th%20International%20Conference%20on,in%20Detroit%2C%20Michigan%2C%20USA.
   note: main track
   place: Detroit, Michigan
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'AAMAS: International Conference on Autonomous Agents and Multi-Agent Systems'
   year: 2024
@@ -153,7 +177,9 @@
   link: https://2025.naacl.org/
   note: main track
   place: Albuquerque, New Mexico
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'NAACL: Annual Conference of the North American Chapter of the Association
     for Computational Linguistics'
@@ -166,7 +192,9 @@
   link: https://2025.ijcnn.org/
   note: main track
   place: Rome, Italy
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'IEEE IJCNN: International Joint Conference on Neural Networks'
   year: 2025
@@ -178,7 +206,9 @@
   link: https://ijcai24.org/
   note: main track
   place: Montreal, Canada
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'IJCAI: International Joint Conference on Artificial Intelligence'
   year: 2025
@@ -190,7 +220,9 @@
   link: https://icml.cc/Conferences/FutureMeetings
   note: main track
   place: Vancouver, Canada
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'ICML: International Conference on Machine Learning'
   year: 2025
@@ -202,7 +234,9 @@
   link: https://sites.google.com/view/amw-2024/home
   note: workshop
   place: Vancouver, Canada
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'ICML: Agentic Markets'
   year: 2025
@@ -214,7 +248,9 @@
   link: https://icml-mfm-eai.github.io/
   note: workshop
   place: Vancouver, Canada
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'ICML: Multi-modal Foundation Model meets Embodied AI (MFM-EAI)'
   year: 2025
@@ -226,7 +262,9 @@
   link: https://2025.aclweb.org/
   note: main track
   place: Vienna, Austria
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'ACL: Annual Meeting of the Association for Computational Linguistics'
   year: 2025
@@ -238,7 +276,9 @@
   link: https://nl-reasoning-workshop.github.io/
   note: workshop
   place: Vienna, Austria
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'ACL: Natural Language Reasoning and Structured Explanations Workshop'
   year: 2025
@@ -251,7 +291,9 @@
   link: https://2024.eacl.org/
   note: main track
   place: '?'
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'EACL: Conference of the European Chapterof the Association for Computational
     Linguistics'
@@ -264,7 +306,9 @@
   link: https://conf.researchr.org/home/icse-2025
   note: main track cycle 1
   place: Ottawa, Canada
-  sub: ML
+  sub:
+  - ML
+  - main_track_cycle_1
   timezone: UTC-12
   title: 'ICSE: International Conference onSoftware Engineering'
   year: 2024
@@ -276,7 +320,9 @@
   link: https://conf.researchr.org/home/icse-2025
   note: main track cycle 2
   place: Ottawa, Canada
-  sub: ML
+  sub:
+  - ML
+  - main_track_cycle_2
   timezone: UTC-12
   title: 'ICSE: International Conference onSoftware Engineering'
   year: 2025
@@ -288,7 +334,9 @@
   link: 3 September
   note: workshop
   place: Ottawa, Canada
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'ICSE: IDE Workshop'
   year: 2025
@@ -300,7 +348,9 @@
   link: https://conf.researchr.org/track/icse-2025/icse-2025-industry-challenge-track
   note: sub track
   place: Ottawa, Canada
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'ICSE: Industry Challange Track'
   year: 2024
@@ -312,7 +362,9 @@
   link: https://conf.researchr.org/track/icse-2025/icse-2025-demonstrations
   note: sub track
   place: Ottawa, Canada
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'ICSE: Tool Demonstration Track'
   year: 2024
@@ -324,7 +376,9 @@
   link: https://conf.researchr.org/track/icse-2025/icse-2025-nier
   note: sub track
   place: Ottawa, Canada
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'ICSE: New Ideas and Emerging Results (NIER)'
   year: 2024
@@ -336,7 +390,9 @@
   link: https://2025.msrconf.org/
   note: main track
   place: Ottawa, Canada
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'MSR: Mining Software Repositories'
   year: 2024
@@ -348,7 +404,9 @@
   link: https://2025.msrconf.org/track/msr-2025-data-and-tool-showcase-track
   note: sub track
   place: Ottawa, Canada
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'MSR: Data and Tool Showcase Track'
   year: 2024
@@ -360,7 +418,9 @@
   link: https://www.ecai2024.eu/
   note: main track
   place: Bologna, Italy
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'ESAI: European Conference on Artificial Intelligence'
   year: 2025
@@ -372,7 +432,9 @@
   link: https://2024.emnlp.org/
   note: main track
   place: '?'
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'EMNLP: Empirical Methods in Natural Language Processing'
   year: 2025
@@ -384,7 +446,9 @@
   link: https://2024.emnlp.org/calls/demos/
   note: sub track
   place: '?'
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'EMNLP: System Demonstration Track'
   year: 2025
@@ -396,7 +460,9 @@
   link: https://2024.emnlp.org/calls/industry_track/
   note: sub track
   place: '?'
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'EMNLP: Industry Track'
   year: 2025
@@ -408,7 +474,9 @@
   link: https://iclr.cc/
   note: main track
   place: Singapore
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'ICLR: International Conference on Learning Representations'
   year: 2024
@@ -420,7 +488,9 @@
   link: https://sites.google.com/view/genai4dm-iclr2024
   note: workshop
   place: Singapore
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'ICLR: Generative Models for Decision Making'
   year: 2025
@@ -432,7 +502,9 @@
   link: https://llmagents.github.io/
   note: workshop
   place: Singapore
-  sub: ML
+  sub:
+  - ML
+  - workshop
   timezone: UTC-12
   title: 'ICLR: Workshop on LLM Agents'
   year: 2025
@@ -444,7 +516,9 @@
   link: https://conf.researchr.org/home/icsme-2024
   note: main track
   place: Auckland, New Zealand
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'ICSME: International Conference on Software Maintenance and Evolution'
   year: 2025
@@ -456,7 +530,9 @@
   link: https://conf.researchr.org/track/icsme-2024/icsme-2024-industry-track
   note: sub track
   place: Auckland, New Zealand
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'ICSME: Industry Challange Track'
   year: 2025
@@ -468,7 +544,9 @@
   link: https://conf.researchr.org/track/icsme-2024/icsme-2024-tool-demo-track
   note: sub track
   place: Auckland, New Zealand
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'ICSME: Tool Demonstration Track'
   year: 2025
@@ -481,7 +559,9 @@
   link: https://conf.researchr.org/home/saner-2025
   note: main track
   place: Montréal, Québec, Canada
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'SANER: International Conference on Software Analysis, Evolution and Reengineering'
   year: 2024
@@ -493,7 +573,9 @@
   link: https://conf.researchr.org/track/saner-2025/saner-2025-industrial-track
   note: sub track
   place: Montréal, Québec, Canada
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'SANER: Industry Track'
   year: 2024
@@ -505,7 +587,9 @@
   link: https://conf.researchr.org/track/saner-2025/saner-2025-tool-demo-track
   note: sub track
   place: Montréal, Québec, Canada
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'SANER: Tool Demonstration Track'
   year: 2024
@@ -517,7 +601,9 @@
   link: https://conf.researchr.org/track/saner-2025/saner-2025-workshops-track
   note: sub track
   place: Montréal, Québec, Canada
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'SANER: Workshops Track'
   year: 2024
@@ -529,7 +615,9 @@
   link: https://conf.researchr.org/series/fse
   note: main track
   place: Trondheim, Norway
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'FSE: Foundations of Software Engineering'
   year: 2024
@@ -541,7 +629,9 @@
   link: https://2024.esec-fse.org/track/fse-2024-industry?
   note: sub track
   place: Trondheim, Norway
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'FSE: Industry Track'
   year: 2025
@@ -553,7 +643,9 @@
   link: https://2024.esec-fse.org/track/fse-2024-demonstrations?
   note: sub track
   place: Trondheim, Norway
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'FSE: Tool Track'
   year: 2025
@@ -565,7 +657,9 @@
   link: https://conf.researchr.org/home/ase-2024
   note: main track
   place: Seoul, South Korea
-  sub: ML
+  sub:
+  - ML
+  - main_track
   timezone: UTC-12
   title: 'ASE: Automated Software Engineering'
   year: 2025
@@ -577,7 +671,9 @@
   link: https://conf.researchr.org/track/ase-2024/ase-2024-industry-showcase
   note: sub track
   place: Seoul, South Korea
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'ASE: Industry Track'
   year: 2025
@@ -589,7 +685,9 @@
   link: https://conf.researchr.org/track/ase-2024/ase-2024-tool-demonstrations
   note: sub track
   place: Seoul, South Korea
-  sub: ML
+  sub:
+  - ML
+  - sub_track
   timezone: UTC-12
   title: 'ASE: Tool Track'
   year: 2025

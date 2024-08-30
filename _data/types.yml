@@ -4,3 +4,19 @@
 - name: Visualization
   sub: ML
   color: '#a432a8'
+
+- sub: 'main_track'
+  name: "Main Track"
+  color: '#147df5'
+- sub: 'sub_track'
+  name: 'Sub Track'
+  color: '#147df5'
+- sub: 'workshop'
+  name: 'Workshop'
+  color: '#147df5'
+- sub: 'main_track_cycle_1'
+  name: 'Main Track Cycle 1'
+  color: '#147df5'
+- sub: 'main_track_cycle_2'
+  name: "Main Track Cycle 2"
+  color: '#147df5'

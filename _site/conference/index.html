@@ -9,11 +9,11 @@
 <meta name="description" content="Countdowns to conference deadlines">
 <meta name="author" content="Konstantin Grotov">
 <meta name="keywords" content="HCI, deadlines, conference">
-<link rel="stylesheet" type="text/css" href=" /static/css/js-year-calendar.min.css?t=1725029775" media="screen,projection">
+<link rel="stylesheet" type="text/css" href=" /static/css/js-year-calendar.min.css?t=1725031227" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href=" /static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href=" /static/css/deadlines.css?t=1725029775" media="screen,projection">
-<link rel="stylesheet" type="text/css" href=" /static/css/calendar.css?t=1725029775" media="screen,projection">
+<link rel="stylesheet" type="text/css" href=" /static/css/deadlines.css?t=1725031227" media="screen,projection">
+<link rel="stylesheet" type="text/css" href=" /static/css/calendar.css?t=1725031227" media="screen,projection">
 
 <link rel="shortcut icon" href=" /static/img/favicon.png">
 
@@ -179,7 +179,7 @@
 var subs = [];
 var _all_subs = [];
 // Get all subs
-var conf_type_data = [{"sub":"AI","color":"#147df5"},{"name":"Visualization","sub":"ML","color":"#a432a8"}];
+var conf_type_data = [{"sub":"AI","color":"#147df5"},{"name":"Visualization","sub":"ML","color":"#a432a8"},{"sub":"main_track","name":"Main Track","color":"#147df5"},{"sub":"sub_track","name":"Sub Track","color":"#147df5"},{"sub":"workshop","name":"Workshop","color":"#147df5"},{"sub":"main_track_cycle_1","name":"Main Track Cycle 1","color":"#147df5"},{"sub":"main_track_cycle_2","name":"Main Track Cycle 2","color":"#147df5"}];
 var sub2name = {}; var name2sub = {};
 for (var i = 0; i < conf_type_data.length; i++) {
     _all_subs[i] = conf_type_data[i]['sub'];
@@ -262,7 +262,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("AAAI: National Conference of the American Association for Artificial Intelligence 2024");
         $('#conf-title-href').attr('href', "/conference?id=aaai_national_conference_of_the_american_association_for_artificial_intelligence_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -343,7 +343,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("AAAI: Special Track on AI Alignment 2024");
         $('#conf-title-href').attr('href', "/conference?id=aaai_special_track_on_ai_alignment_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -424,7 +424,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("AAAI: Demonstration Track 2024");
         $('#conf-title-href').attr('href', "/conference?id=aaai_demonstration_track_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -505,7 +505,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("NIPS: Annual Conference on Neural Information Processing Systems 2024");
         $('#conf-title-href').attr('href', "/conference?id=nips_annual_conference_on_neural_information_processing_systems_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -586,7 +586,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("NIPS: Datasets and Benchmarks Track 2024");
         $('#conf-title-href').attr('href', "/conference?id=nips_datasets_and_benchmarks_track_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -667,7 +667,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("NIPS: Foundation Models for Decision Making 2024");
         $('#conf-title-href').attr('href', "/conference?id=nips_foundation_models_for_decision_making_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -748,7 +748,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("NIPS: Instruction Tuning and Instruction Following 2024");
         $('#conf-title-href').attr('href', "/conference?id=nips_instruction_tuning_and_instruction_following_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -829,7 +829,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("NIPS: Agent Learning in Open-Endedness (ALOE) 2024");
         $('#conf-title-href').attr('href', "/conference?id=nips_agent_learning_in_openendedness_aloe_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -910,7 +910,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("NIPS: Efficient Natural Language and Speech Processing (ENLSP) 2024");
         $('#conf-title-href').attr('href', "/conference?id=nips_efficient_natural_language_and_speech_processing_enlsp_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -991,7 +991,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("NIPS: Generalization in Planning 2024");
         $('#conf-title-href').attr('href', "/conference?id=nips_generalization_in_planning_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1072,7 +1072,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("NIPS: Multi-Agent Security: Security as Key to AI Safety 2024");
         $('#conf-title-href').attr('href', "/conference?id=nips_multiagent_security_security_as_key_to_ai_safety_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1153,7 +1153,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("AAMAS: International Conference on Autonomous Agents and Multi-Agent Systems 2024");
         $('#conf-title-href').attr('href', "/conference?id=aamas_international_conference_on_autonomous_agents_and_multiagent_systems_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1234,7 +1234,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("NAACL: Annual Conference of the North American Chapter of the Association for Computational Linguistics 2024");
         $('#conf-title-href').attr('href', "/conference?id=naacl_annual_conference_of_the_north_american_chapter_of_the_association_for_computational_linguistics_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1315,7 +1315,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("IEEE IJCNN: International Joint Conference on Neural Networks 2025");
         $('#conf-title-href').attr('href', "/conference?id=ieee_ijcnn_international_joint_conference_on_neural_networks_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1396,7 +1396,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("IJCAI: International Joint Conference on Artificial Intelligence 2025");
         $('#conf-title-href').attr('href', "/conference?id=ijcai_international_joint_conference_on_artificial_intelligence_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1477,7 +1477,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICML: International Conference on Machine Learning 2025");
         $('#conf-title-href').attr('href', "/conference?id=icml_international_conference_on_machine_learning_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1558,7 +1558,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICML: Agentic Markets 2025");
         $('#conf-title-href').attr('href', "/conference?id=icml_agentic_markets_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1639,7 +1639,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICML: Multi-modal Foundation Model meets Embodied AI (MFM-EAI) 2025");
         $('#conf-title-href').attr('href', "/conference?id=icml_multimodal_foundation_model_meets_embodied_ai_mfmeai_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1720,7 +1720,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ACL: Annual Meeting of the Association for Computational Linguistics 2025");
         $('#conf-title-href').attr('href', "/conference?id=acl_annual_meeting_of_the_association_for_computational_linguistics_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1801,7 +1801,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ACL: Natural Language Reasoning and Structured Explanations Workshop 2025");
         $('#conf-title-href').attr('href', "/conference?id=acl_natural_language_reasoning_and_structured_explanations_workshop_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1882,7 +1882,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("EACL: Conference of the European Chapterof the Association for Computational Linguistics 2025");
         $('#conf-title-href').attr('href', "/conference?id=eacl_conference_of_the_european_chapterof_the_association_for_computational_linguistics_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -1963,7 +1963,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICSE: International Conference onSoftware Engineering 2024");
         $('#conf-title-href').attr('href', "/conference?id=icse_international_conference_onsoftware_engineering_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track_cycle_1'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2044,7 +2044,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICSE: International Conference onSoftware Engineering 2025");
         $('#conf-title-href').attr('href', "/conference?id=icse_international_conference_onsoftware_engineering_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track_cycle_2'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2125,7 +2125,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICSE: IDE Workshop 2025");
         $('#conf-title-href').attr('href', "/conference?id=icse_ide_workshop_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2206,7 +2206,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICSE: Industry Challange Track 2024");
         $('#conf-title-href').attr('href', "/conference?id=icse_industry_challange_track_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2287,7 +2287,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICSE: Tool Demonstration Track 2024");
         $('#conf-title-href').attr('href', "/conference?id=icse_tool_demonstration_track_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2368,7 +2368,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICSE: New Ideas and Emerging Results (NIER) 2024");
         $('#conf-title-href').attr('href', "/conference?id=icse_new_ideas_and_emerging_results_nier_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2449,7 +2449,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("MSR: Mining Software Repositories 2024");
         $('#conf-title-href').attr('href', "/conference?id=msr_mining_software_repositories_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2530,7 +2530,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("MSR: Data and Tool Showcase Track 2024");
         $('#conf-title-href').attr('href', "/conference?id=msr_data_and_tool_showcase_track_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2611,7 +2611,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ESAI: European Conference on Artificial Intelligence 2025");
         $('#conf-title-href').attr('href', "/conference?id=esai_european_conference_on_artificial_intelligence_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2692,7 +2692,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("EMNLP: Empirical Methods in Natural Language Processing 2025");
         $('#conf-title-href').attr('href', "/conference?id=emnlp_empirical_methods_in_natural_language_processing_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2773,7 +2773,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("EMNLP: System Demonstration Track 2025");
         $('#conf-title-href').attr('href', "/conference?id=emnlp_system_demonstration_track_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2854,7 +2854,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("EMNLP: Industry Track 2025");
         $('#conf-title-href').attr('href', "/conference?id=emnlp_industry_track_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -2935,7 +2935,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICLR: International Conference on Learning Representations 2024");
         $('#conf-title-href').attr('href', "/conference?id=iclr_international_conference_on_learning_representations_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3016,7 +3016,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICLR: Generative Models for Decision Making 2025");
         $('#conf-title-href').attr('href', "/conference?id=iclr_generative_models_for_decision_making_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3097,7 +3097,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICLR: Workshop on LLM Agents 2025");
         $('#conf-title-href').attr('href', "/conference?id=iclr_workshop_on_llm_agents_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLworkshop'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3178,7 +3178,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICSME: International Conference on Software Maintenance and Evolution 2025");
         $('#conf-title-href').attr('href', "/conference?id=icsme_international_conference_on_software_maintenance_and_evolution_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3259,7 +3259,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICSME: Industry Challange Track 2025");
         $('#conf-title-href').attr('href', "/conference?id=icsme_industry_challange_track_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3340,7 +3340,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ICSME: Tool Demonstration Track 2025");
         $('#conf-title-href').attr('href', "/conference?id=icsme_tool_demonstration_track_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3421,7 +3421,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("SANER: International Conference on Software Analysis, Evolution and Reengineering 2024");
         $('#conf-title-href').attr('href', "/conference?id=saner_international_conference_on_software_analysis_evolution_and_reengineering_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3502,7 +3502,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("SANER: Industry Track 2024");
         $('#conf-title-href').attr('href', "/conference?id=saner_industry_track_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3583,7 +3583,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("SANER: Tool Demonstration Track 2024");
         $('#conf-title-href').attr('href', "/conference?id=saner_tool_demonstration_track_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3664,7 +3664,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("SANER: Workshops Track 2024");
         $('#conf-title-href').attr('href', "/conference?id=saner_workshops_track_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3745,7 +3745,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("FSE: Foundations of Software Engineering 2024");
         $('#conf-title-href').attr('href', "/conference?id=fse_foundations_of_software_engineering_2024");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3826,7 +3826,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("FSE: Industry Track 2025");
         $('#conf-title-href').attr('href', "/conference?id=fse_industry_track_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3907,7 +3907,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("FSE: Tool Track 2025");
         $('#conf-title-href').attr('href', "/conference?id=fse_tool_track_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -3988,7 +3988,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ASE: Automated Software Engineering 2025");
         $('#conf-title-href').attr('href', "/conference?id=ase_automated_software_engineering_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLmain_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -4069,7 +4069,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ASE: Industry Track 2025");
         $('#conf-title-href').attr('href', "/conference?id=ase_industry_track_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
@@ -4150,7 +4150,7 @@ function createCalendarFromObject(data) {
         $('#conf-title-href').text("ASE: Tool Track 2025");
         $('#conf-title-href').attr('href', "/conference?id=ase_tool_track_2025");
         // set badges
-        var subs = 'ML'.split(',');
+        var subs = 'MLsub_track'.split(',');
         for (let i = 0; i < subs.length; i++) {
           var sub = subs[i].replace(" ", "");
           var sub_element = document.createElement('span');
