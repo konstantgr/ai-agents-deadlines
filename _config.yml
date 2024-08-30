@@ -2,8 +2,10 @@ title: ⏰ Conference Deadlines
 description: Countdowns to conference deadlines
 author: Konstantin Grotov
 
-domain: 'konstantgr.github.io'
-baseurl: ''
+#domain: 'konstantgr.github.io'
+#baseurl: ''
+domain: "https://konstantgr.github.io/jbr-deadlines/"
+baseurl: /jbr-deadlines
 
 twitter_hashtag: ''
 github_username: konstantgr
