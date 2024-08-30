@@ -1,7 +1,5 @@
 ---
-- sub: AI
-  color: '#147df5'
-- name: Visualization
+- name: ML
   sub: ML
   color: '#a432a8'
 
