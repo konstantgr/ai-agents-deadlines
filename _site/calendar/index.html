@@ -1,0 +1,3113 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>⏰ Conference Deadlines</title>
+<meta name="description" content="Countdowns to conference deadlines">
+<meta name="author" content="Konstantin Grotov">
+<meta name="keywords" content="HCI, deadlines, conference">
+<link rel="stylesheet" type="text/css" href=" /static/css/js-year-calendar.min.css?t=1725027867" media="screen,projection">
+
+<link rel="stylesheet" type="text/css" href=" /static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href=" /static/css/deadlines.css?t=1725027867" media="screen,projection">
+<link rel="stylesheet" type="text/css" href=" /static/css/calendar.css?t=1725027867" media="screen,projection">
+
+<link rel="shortcut icon" href=" /static/img/favicon.png">
+
+<script type="text/javascript" src=" /static/js/js-year-calendar.js"></script>
+<script type="text/javascript" src=" /static/js/jquery.min.js"></script>
+<script type="text/javascript" src=" /static/js/popper.min.js"></script>
+<script type="text/javascript" src=" /static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src=" /static/js/jquery.countdown.min.js"></script>
+<script type="text/javascript" src=" /static/js/moment.min.js"></script>
+<script type="text/javascript" src=" /static/js/moment-timezone-with-data.min.js"></script>
+<script type="text/javascript" src=" /static/js/store.min.js"></script>
+<script type="text/javascript" src=" /static/js/ouical.min.js"></script>
+<script type="text/javascript" src=" /static/js/bootstrap-multiselect.min.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <div style="vertical-align: middle; padding-top: 8px;">
+      <div>
+        <a class="navbar-brand" href="/"
+          style="border-bottom: none; line-height: 0.1em; margin-bottom: 5%;">
+          HCI Deadlines<br><br>
+        </a>
+      </div>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggler"
+      aria-controls="navbars-toggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-toggler">
+      <ul class="navbar-nav mr-auto">
+        <li>
+          <a href="/" class="nav-link" style="border-bottom: none">Countdowns</a>
+        </li>
+        <li>
+          <a href="/calendar" class="nav-link" style="border-bottom: none;">Calendar</a>
+        </li>
+      </ul>
+      <div class="twitter-github-icons">
+        <a href="https://twitter.com/share" class="twitter-share-button"
+          data-text="Countdowns to conference deadlines"
+          data-show-count="false" style="font-size: 13px;">Tweet</a>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        &nbsp; &nbsp;
+        <iframe
+          src="https://ghbtns.com/github-btn.html?user=konstantgr&repo=ai-agents-deadlines&type=star&count=true"
+          frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+    <br>
+    <h1>Calendar Overview of Conference Deadlines and Dates</h1>
+    <div class="row">
+      <div class="meta col-sm-12">
+        Overview of deadlines and conference dates in a calendar.
+        Also, <a href="/">countdowns</a> to CV/NLP/ML/Robotics/AI conference deadlines.
+      </div>
+      <br>
+    </div>
+
+    <br>
+
+    <!-- Filter Form -->
+    <div class="row">
+      <form class="container">
+        <div class="row justify-content-center">
+          <div class="row align-items-md-center col-12 col-10-md">
+            <div class="col-12 col-md-5 filter-label">
+              <label for="subject-select" class="align-center" style="margin-bottom: 0px; line-height: 1.5;">
+                Subject Filter:
+              </label>
+            </div>
+            <div class="col-12 col-md-6">
+              <select id="subject-select" name="subject-select" multiple="multiple" style="display: none">
+                
+                <option value="AI" id="AI-checkbox">
+                   (AI)
+                </option>
+                
+                <option value="ML" id="ML-checkbox">
+                  Visualization (ML)
+                </option>
+                
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <br>
+    <div id="calendar-page" class="calendar-page"></div>
+
+    <div class="modal fade" id="event-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Event</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" name="event-index" />
+            <form class="form-horizontal">
+              <div class="form-group row">
+                <label for="event-name" class="col-sm-4 control-label">Name</label>
+                <div class="col-sm-8">
+                  <input id="event-name" name="event-name" type="text" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="event-location" class="col-sm-4 control-label">Location</label>
+                <div class="col-sm-8">
+                  <input id="event-location" name="event-location" type="text" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="min-date" class="col-sm-4 control-label">Dates</label>
+                <div class="col-sm-8">
+                  <div class="input-group input-daterange" data-provide="datepicker">
+                    <input id="min-date" name="event-start-date" type="text" class="form-control" />
+                    <div class="input-group-prepend input-group-append">
+                      <div class="input-group-text">to</div>
+                    </div>
+                    <input name="event-end-date" type="text" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="save-event">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="context-menu"></div>
+    <br>
+    <div class="row">
+      <div class="col-6 col-sm-4">
+        <span class="color-box" style="background-color: red;"></span> Deadlines
+      </div>
+      <div class="col-6 col-sm-4">
+        <span class="color-box" style="background-color: gray"></span> Today
+      </div>
+      
+      <div class="col-6 col-sm-4">
+        <span class="color-box" style="background-color: #147df5"></span> 
+      </div>
+      
+      <div class="col-6 col-sm-4">
+        <span class="color-box" style="background-color: #a432a8"></span> Visualization
+      </div>
+      
+    </div>
+    <hr>
+    <footer>
+      <div class="row">
+  <div class="col-12 col-sm-12">
+    <a href="/">ai-agents-deadlines.github.io</a>
+    is a fork of a <a href="https://github.com/paperswithcode/ai-deadlines">repository</a> by
+    <a href="https://twitter.com/abhshkdz">abhshkdz</a>. It is now run and maintained by
+    <a href="https://makinteract.kaist.ac.kr" style="font-weight: bold; color: #E60269;">Make lab</a> at KAIST and by <a
+      href="https://github.com/not-dalia" style="font-weight: bold; color: #E60269;">Dalya Al-Shahrabi</a>.<br>
+  </div>
+</div>
+    </footer>
+
+  </div>
+
+
+
+  <script type="text/javascript" charset="utf-8">
+    let calendar = null;
+    var page_url = "/calendar"
+    var conf_list_all = [];
+
+    // Borrowed from https://github.com/moment/moment-timezone/issues/167
+// Adds support for time zones 'UTC-12'..'UTC+12'
+function addUtcTimeZones() {
+  // Moment.js uses the IANA timezone database, which supports generic time zones like 'Etc/GMT+1'.
+  // However, the signs for these time zones are inverted compared to ISO 8601.
+  // For more details, see https://github.com/moment/moment-timezone/issues/167
+  for (let offset = -12; offset <= 12; offset++) {
+    const posixSign = offset <= 0 ? "+" : "-";
+    const isoSign = offset >= 0 ? "+" : "-";
+    const link = `Etc/GMT${posixSign}${Math.abs(
+      offset
+    )}|UTC${isoSign}${Math.abs(offset)}`;
+    moment.tz.link(link);
+  }
+}
+
+function update_filtering(data) {
+  var page_url = "";
+  store.set("ai-agents-deadlines.github.io-subs", data.subs);
+
+  $(".confItem").hide();
+  for (const j in data.all_subs) {
+    const s = data.all_subs[j];
+    const identifier = "." + s + "-conf";
+    if (data.subs.includes(s)) {
+      $(identifier).show();
+    }
+  }
+
+  if (subs.length == 0) {
+    window.history.pushState("", "", page_url);
+  } else {
+    window.history.pushState("", "", page_url + "/?sub=" + data.subs.join());
+  }
+}
+
+function createCalendarFromObject(data) {
+  return createCalendar({
+    options: {
+      class: "calendar-obj",
+
+      // You can pass an ID. If you don't, one will be generated for you
+      id: data.id,
+    },
+    data: {
+      // Event title
+      title: data.title,
+
+      // Event start date
+      start: data.date,
+
+      // Event duration
+      duration: 60,
+    },
+  });
+}
+
+    
+var subs = [];
+var _all_subs = [];
+// Get all subs
+var conf_type_data = [{"sub":"AI","color":"#147df5"},{"name":"Visualization","sub":"ML","color":"#a432a8"}];
+var sub2name = {}; var name2sub = {};
+for (var i = 0; i < conf_type_data.length; i++) {
+    _all_subs[i] = conf_type_data[i]['sub'];
+    sub2name[conf_type_data[i]['sub']] = conf_type_data[i]['name'];
+    name2sub[conf_type_data[i]['name']] = conf_type_data[i]['sub'];
+}
+const all_subs = _all_subs;
+
+
+    // Multi-select handler
+$("#subject-select").multiselect({
+  includeSelectAllOption: true,
+  numberDisplayed: 5,
+  onChange: function (option, checked, select) {
+    var csub = $(option).val();
+    if (checked == true) {
+      if (subs.indexOf(csub) < 0) subs.push(csub);
+    } else {
+      var idx = subs.indexOf(csub);
+      if (idx >= 0) subs.splice(idx, 1);
+      // In case a conf with multiple types (including this type) is wrongly hid, show all confs with at least one checked type.
+      for (var i = 0; i < subs.length; i++) {
+        // $('.' + subs[i] + '-conf').show();
+      }
+    }
+    update_filtering({ subs: subs, all_subs: all_subs });
+  },
+  onSelectAll: function (options) {
+    subs = all_subs;
+    update_filtering({ subs: subs, all_subs: all_subs });
+  },
+  onDeselectAll: function (options) {
+    subs = [];
+    update_filtering({ subs: subs, all_subs: all_subs });
+  },
+  buttonText: function (options, select) {
+    if (options.length === 0) {
+      return "None selected";
+    } else {
+      var labels = [];
+      options.each(function () {
+        if ($(this).attr("value") !== undefined) {
+          labels.push($(this).attr("value"));
+        } else {
+          labels.push($(this).html());
+        }
+      });
+      return labels.join(", ") + "";
+    }
+  },
+  buttonTitle: function (options, select) {
+    return "";
+  },
+});
+
+    
+      // calendar data template
+      var calendar_data = {
+        clickDay: function (e) {
+          if (e.events.length > 0) {
+            for (var i in e.events) {
+              window.open("/conference?id=" + e.events[i].abbreviation, "_self")
+            }
+          }
+        },
+        mouseOnDay: function (e) {
+          if (e.events.length > 0) {
+            var content = "";
+
+            for (var i in e.events) {
+              var headline_color = "";
+              var break_html = '<hr>';
+
+              var location_html = '<img src="/static/img/072-location.svg" className="own-badge"/>&nbsp;' + e.events[i].location;
+              var date_html = '<img src="/static/img/084-calendar.svg" className="own-badge"/>&nbsp;' + e.events[i].date;
+
+              var badges_html = "";
+              var subs = e.events[i].subject.split(',');
+              for (let i = 0; i < subs.length; i++) {
+                var sub = subs[i].replace(" ", "");
+                badges_html += '<span class="conf-sub conf-badge-small">' + sub + '</span>'
+              }
+              if (e.events[i].hindex != "") {
+                badges_html += '<span class="conf-h5 conf-badge-small">' + e.events[i].hindex + '</span>'
+              }
+
+              if (i == e.events.length - 1) {
+                break_html = '';
+              }
+
+
+              if (e.events[i].id.endsWith("deadline")) {
+                headline_color = 'deadline-text';
+              } else {
+              }
+              content +=
+                '<div class="event-tooltip-content">' +
+                '<div class="event-name ' + headline_color + '">' +
+                '<b>' + e.events[i].name + '</b>' +
+                '</div>' +
+                '<div class="event-location">' +
+                location_html +
+                '<br>' +
+                date_html +
+                '<br>' +
+                badges_html +
+                '</div>' +
+                break_html +
+                '</div>';
+            }
+
+            $(e.element).popover({
+              trigger: "manual",
+              container: "body",
+              html: true,
+              content: content,
+            });
+
+            $(e.element).popover("show");
+          }
+        },
+        mouseOutDay: function (e) {
+          if (e.events.length > 0) {
+            $(e.element).popover("hide");
+          }
+        },
+        customDayRenderer: function (cellContent, currentDate) {
+          var today = new Date();
+          // render today
+          if (today.getFullYear() === currentDate.getFullYear() && today.getMonth() === currentDate.getMonth() && today.getDate() === currentDate.getDate()) {
+            cellContent.style = "background-color: gray;";
+          }
+        },
+        dayContextMenu: function (e) {
+          $(e.element).popover("hide");
+        },
+        dataSource: conf_list_all
+      }
+function load_conference_list() {
+  // Gather data
+  var conf_list_all = [];
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "aaai_national_conference_of_the_american_association_for_artificial_intelligence_2024-deadline",
+      abbreviation: "aaai_national_conference_of_the_american_association_for_artificial_intelligence_2024",
+      name: "AAAI: National Conference of the American Association for Artificial Intelligence 2024",
+      color: "red",
+      location: "Philadelphia, USA",
+      date: "February 25 - March 4 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-08-15"),
+      endDate: Date.parse("2024-08-15"),
+    });
+
+    
+    conf_list_all.push({
+      id: "aaai_national_conference_of_the_american_association_for_artificial_intelligence_2024-abstract-deadline",
+      abbreviation: "aaai_national_conference_of_the_american_association_for_artificial_intelligence_2024",
+      name: "AAAI: National Conference of the American Association for Artificial Intelligence 2024 - Abstract Deadline",
+      color: "red",
+      location: "Philadelphia, USA",
+      date: "February 25 - March 4 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-08-07"),
+      endDate: Date.parse("2024-08-07"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "aaai_national_conference_of_the_american_association_for_artificial_intelligence_2024-conference",
+        abbreviation: "aaai_national_conference_of_the_american_association_for_artificial_intelligence_2024",
+        name: "AAAI: National Conference of the American Association for Artificial Intelligence 2024",
+        color: color,
+        location: "Philadelphia, USA",
+        date: "February 25 - March 4 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "aaai_special_track_on_ai_alignment_2024-deadline",
+      abbreviation: "aaai_special_track_on_ai_alignment_2024",
+      name: "AAAI: Special Track on AI Alignment 2024",
+      color: "red",
+      location: "Philadelphia, USA",
+      date: "February 25 - March 4 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-08-15"),
+      endDate: Date.parse("2024-08-15"),
+    });
+
+    
+    conf_list_all.push({
+      id: "aaai_special_track_on_ai_alignment_2024-abstract-deadline",
+      abbreviation: "aaai_special_track_on_ai_alignment_2024",
+      name: "AAAI: Special Track on AI Alignment 2024 - Abstract Deadline",
+      color: "red",
+      location: "Philadelphia, USA",
+      date: "February 25 - March 4 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-08-07"),
+      endDate: Date.parse("2024-08-07"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "aaai_special_track_on_ai_alignment_2024-conference",
+        abbreviation: "aaai_special_track_on_ai_alignment_2024",
+        name: "AAAI: Special Track on AI Alignment 2024",
+        color: color,
+        location: "Philadelphia, USA",
+        date: "February 25 - March 4 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "aaai_demonstration_track_2024-deadline",
+      abbreviation: "aaai_demonstration_track_2024",
+      name: "AAAI: Demonstration Track 2024",
+      color: "red",
+      location: "Philadelphia, USA",
+      date: "February 25 - March 4 2026",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-03"),
+      endDate: Date.parse("2024-10-03"),
+    });
+
+    
+    conf_list_all.push({
+      id: "aaai_demonstration_track_2024-abstract-deadline",
+      abbreviation: "aaai_demonstration_track_2024",
+      name: "AAAI: Demonstration Track 2024 - Abstract Deadline",
+      color: "red",
+      location: "Philadelphia, USA",
+      date: "February 25 - March 4 2026",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-03"),
+      endDate: Date.parse("2024-10-03"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "aaai_demonstration_track_2024-conference",
+        abbreviation: "aaai_demonstration_track_2024",
+        name: "AAAI: Demonstration Track 2024",
+        color: color,
+        location: "Philadelphia, USA",
+        date: "February 25 - March 4 2026",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "nips_annual_conference_on_neural_information_processing_systems_2024-deadline",
+      abbreviation: "nips_annual_conference_on_neural_information_processing_systems_2024",
+      name: "NIPS: Annual Conference on Neural Information Processing Systems 2024",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-05-22"),
+      endDate: Date.parse("2024-05-22"),
+    });
+
+    
+    conf_list_all.push({
+      id: "nips_annual_conference_on_neural_information_processing_systems_2024-abstract-deadline",
+      abbreviation: "nips_annual_conference_on_neural_information_processing_systems_2024",
+      name: "NIPS: Annual Conference on Neural Information Processing Systems 2024 - Abstract Deadline",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-05-22"),
+      endDate: Date.parse("2024-05-22"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "nips_annual_conference_on_neural_information_processing_systems_2024-conference",
+        abbreviation: "nips_annual_conference_on_neural_information_processing_systems_2024",
+        name: "NIPS: Annual Conference on Neural Information Processing Systems 2024",
+        color: color,
+        location: "San Diego, USA",
+        date: "December 9 - 16 2024",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "nips_datasets_and_benchmarks_track_2024-deadline",
+      abbreviation: "nips_datasets_and_benchmarks_track_2024",
+      name: "NIPS: Datasets and Benchmarks Track 2024",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-06-05"),
+      endDate: Date.parse("2024-06-05"),
+    });
+
+    
+    conf_list_all.push({
+      id: "nips_datasets_and_benchmarks_track_2024-abstract-deadline",
+      abbreviation: "nips_datasets_and_benchmarks_track_2024",
+      name: "NIPS: Datasets and Benchmarks Track 2024 - Abstract Deadline",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-05-29"),
+      endDate: Date.parse("2024-05-29"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "nips_datasets_and_benchmarks_track_2024-conference",
+        abbreviation: "nips_datasets_and_benchmarks_track_2024",
+        name: "NIPS: Datasets and Benchmarks Track 2024",
+        color: color,
+        location: "San Diego, USA",
+        date: "December 9 - 16 2024",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "nips_foundation_models_for_decision_making_2024-deadline",
+      abbreviation: "nips_foundation_models_for_decision_making_2024",
+      name: "NIPS: Foundation Models for Decision Making 2024",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+
+    
+    conf_list_all.push({
+      id: "nips_foundation_models_for_decision_making_2024-abstract-deadline",
+      abbreviation: "nips_foundation_models_for_decision_making_2024",
+      name: "NIPS: Foundation Models for Decision Making 2024 - Abstract Deadline",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "nips_foundation_models_for_decision_making_2024-conference",
+        abbreviation: "nips_foundation_models_for_decision_making_2024",
+        name: "NIPS: Foundation Models for Decision Making 2024",
+        color: color,
+        location: "San Diego, USA",
+        date: "December 9 - 16 2024",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "nips_instruction_tuning_and_instruction_following_2024-deadline",
+      abbreviation: "nips_instruction_tuning_and_instruction_following_2024",
+      name: "NIPS: Instruction Tuning and Instruction Following 2024",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+
+    
+    conf_list_all.push({
+      id: "nips_instruction_tuning_and_instruction_following_2024-abstract-deadline",
+      abbreviation: "nips_instruction_tuning_and_instruction_following_2024",
+      name: "NIPS: Instruction Tuning and Instruction Following 2024 - Abstract Deadline",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "nips_instruction_tuning_and_instruction_following_2024-conference",
+        abbreviation: "nips_instruction_tuning_and_instruction_following_2024",
+        name: "NIPS: Instruction Tuning and Instruction Following 2024",
+        color: color,
+        location: "San Diego, USA",
+        date: "December 9 - 16 2024",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "nips_agent_learning_in_openendedness_aloe_2024-deadline",
+      abbreviation: "nips_agent_learning_in_openendedness_aloe_2024",
+      name: "NIPS: Agent Learning in Open-Endedness (ALOE) 2024",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+
+    
+    conf_list_all.push({
+      id: "nips_agent_learning_in_openendedness_aloe_2024-abstract-deadline",
+      abbreviation: "nips_agent_learning_in_openendedness_aloe_2024",
+      name: "NIPS: Agent Learning in Open-Endedness (ALOE) 2024 - Abstract Deadline",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "nips_agent_learning_in_openendedness_aloe_2024-conference",
+        abbreviation: "nips_agent_learning_in_openendedness_aloe_2024",
+        name: "NIPS: Agent Learning in Open-Endedness (ALOE) 2024",
+        color: color,
+        location: "San Diego, USA",
+        date: "December 9 - 16 2024",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "nips_efficient_natural_language_and_speech_processing_enlsp_2024-deadline",
+      abbreviation: "nips_efficient_natural_language_and_speech_processing_enlsp_2024",
+      name: "NIPS: Efficient Natural Language and Speech Processing (ENLSP) 2024",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+
+    
+    conf_list_all.push({
+      id: "nips_efficient_natural_language_and_speech_processing_enlsp_2024-abstract-deadline",
+      abbreviation: "nips_efficient_natural_language_and_speech_processing_enlsp_2024",
+      name: "NIPS: Efficient Natural Language and Speech Processing (ENLSP) 2024 - Abstract Deadline",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "nips_efficient_natural_language_and_speech_processing_enlsp_2024-conference",
+        abbreviation: "nips_efficient_natural_language_and_speech_processing_enlsp_2024",
+        name: "NIPS: Efficient Natural Language and Speech Processing (ENLSP) 2024",
+        color: color,
+        location: "San Diego, USA",
+        date: "December 9 - 16 2024",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "nips_generalization_in_planning_2024-deadline",
+      abbreviation: "nips_generalization_in_planning_2024",
+      name: "NIPS: Generalization in Planning 2024",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+
+    
+    conf_list_all.push({
+      id: "nips_generalization_in_planning_2024-abstract-deadline",
+      abbreviation: "nips_generalization_in_planning_2024",
+      name: "NIPS: Generalization in Planning 2024 - Abstract Deadline",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "nips_generalization_in_planning_2024-conference",
+        abbreviation: "nips_generalization_in_planning_2024",
+        name: "NIPS: Generalization in Planning 2024",
+        color: color,
+        location: "San Diego, USA",
+        date: "December 9 - 16 2024",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "nips_multiagent_security_security_as_key_to_ai_safety_2024-deadline",
+      abbreviation: "nips_multiagent_security_security_as_key_to_ai_safety_2024",
+      name: "NIPS: Multi-Agent Security: Security as Key to AI Safety 2024",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+
+    
+    conf_list_all.push({
+      id: "nips_multiagent_security_security_as_key_to_ai_safety_2024-abstract-deadline",
+      abbreviation: "nips_multiagent_security_security_as_key_to_ai_safety_2024",
+      name: "NIPS: Multi-Agent Security: Security as Key to AI Safety 2024 - Abstract Deadline",
+      color: "red",
+      location: "San Diego, USA",
+      date: "December 9 - 16 2024",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "nips_multiagent_security_security_as_key_to_ai_safety_2024-conference",
+        abbreviation: "nips_multiagent_security_security_as_key_to_ai_safety_2024",
+        name: "NIPS: Multi-Agent Security: Security as Key to AI Safety 2024",
+        color: color,
+        location: "San Diego, USA",
+        date: "December 9 - 16 2024",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "aamas_international_conference_on_autonomous_agents_and_multiagent_systems_2024-deadline",
+      abbreviation: "aamas_international_conference_on_autonomous_agents_and_multiagent_systems_2024",
+      name: "AAMAS: International Conference on Autonomous Agents and Multi-Agent Systems 2024",
+      color: "red",
+      location: "Detroit, Michigan",
+      date: "May 19 - 23 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-16"),
+      endDate: Date.parse("2024-10-16"),
+    });
+
+    
+    conf_list_all.push({
+      id: "aamas_international_conference_on_autonomous_agents_and_multiagent_systems_2024-abstract-deadline",
+      abbreviation: "aamas_international_conference_on_autonomous_agents_and_multiagent_systems_2024",
+      name: "AAMAS: International Conference on Autonomous Agents and Multi-Agent Systems 2024 - Abstract Deadline",
+      color: "red",
+      location: "Detroit, Michigan",
+      date: "May 19 - 23 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-09"),
+      endDate: Date.parse("2024-10-09"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "aamas_international_conference_on_autonomous_agents_and_multiagent_systems_2024-conference",
+        abbreviation: "aamas_international_conference_on_autonomous_agents_and_multiagent_systems_2024",
+        name: "AAMAS: International Conference on Autonomous Agents and Multi-Agent Systems 2024",
+        color: color,
+        location: "Detroit, Michigan",
+        date: "May 19 - 23 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "naacl_annual_conference_of_the_north_american_chapter_of_the_association_for_computational_linguistics_2024-deadline",
+      abbreviation: "naacl_annual_conference_of_the_north_american_chapter_of_the_association_for_computational_linguistics_2024",
+      name: "NAACL: Annual Conference of the North American Chapter of the Association for Computational Linguistics 2024",
+      color: "red",
+      location: "Albuquerque, New Mexico",
+      date: "April 29 - May 4 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-15"),
+      endDate: Date.parse("2024-10-15"),
+    });
+
+    
+    conf_list_all.push({
+      id: "naacl_annual_conference_of_the_north_american_chapter_of_the_association_for_computational_linguistics_2024-abstract-deadline",
+      abbreviation: "naacl_annual_conference_of_the_north_american_chapter_of_the_association_for_computational_linguistics_2024",
+      name: "NAACL: Annual Conference of the North American Chapter of the Association for Computational Linguistics 2024 - Abstract Deadline",
+      color: "red",
+      location: "Albuquerque, New Mexico",
+      date: "April 29 - May 4 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-15"),
+      endDate: Date.parse("2024-10-15"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "naacl_annual_conference_of_the_north_american_chapter_of_the_association_for_computational_linguistics_2024-conference",
+        abbreviation: "naacl_annual_conference_of_the_north_american_chapter_of_the_association_for_computational_linguistics_2024",
+        name: "NAACL: Annual Conference of the North American Chapter of the Association for Computational Linguistics 2024",
+        color: color,
+        location: "Albuquerque, New Mexico",
+        date: "April 29 - May 4 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "ieee_ijcnn_international_joint_conference_on_neural_networks_2025-deadline",
+      abbreviation: "ieee_ijcnn_international_joint_conference_on_neural_networks_2025",
+      name: "IEEE IJCNN: International Joint Conference on Neural Networks 2025",
+      color: "red",
+      location: "Rome, Italy",
+      date: "June 30 - July 5 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-01-15"),
+      endDate: Date.parse("2025-01-15"),
+    });
+
+    
+    conf_list_all.push({
+      id: "ieee_ijcnn_international_joint_conference_on_neural_networks_2025-abstract-deadline",
+      abbreviation: "ieee_ijcnn_international_joint_conference_on_neural_networks_2025",
+      name: "IEEE IJCNN: International Joint Conference on Neural Networks 2025 - Abstract Deadline",
+      color: "red",
+      location: "Rome, Italy",
+      date: "June 30 - July 5 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-01-15"),
+      endDate: Date.parse("2025-01-15"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "ieee_ijcnn_international_joint_conference_on_neural_networks_2025-conference",
+        abbreviation: "ieee_ijcnn_international_joint_conference_on_neural_networks_2025",
+        name: "IEEE IJCNN: International Joint Conference on Neural Networks 2025",
+        color: color,
+        location: "Rome, Italy",
+        date: "June 30 - July 5 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "ijcai_international_joint_conference_on_artificial_intelligence_2025-deadline",
+      abbreviation: "ijcai_international_joint_conference_on_artificial_intelligence_2025",
+      name: "IJCAI: International Joint Conference on Artificial Intelligence 2025",
+      color: "red",
+      location: "Montreal, Canada",
+      date: "~August 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-01-17"),
+      endDate: Date.parse("2025-01-17"),
+    });
+
+    
+    conf_list_all.push({
+      id: "ijcai_international_joint_conference_on_artificial_intelligence_2025-abstract-deadline",
+      abbreviation: "ijcai_international_joint_conference_on_artificial_intelligence_2025",
+      name: "IJCAI: International Joint Conference on Artificial Intelligence 2025 - Abstract Deadline",
+      color: "red",
+      location: "Montreal, Canada",
+      date: "~August 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-01-10"),
+      endDate: Date.parse("2025-01-10"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "ijcai_international_joint_conference_on_artificial_intelligence_2025-conference",
+        abbreviation: "ijcai_international_joint_conference_on_artificial_intelligence_2025",
+        name: "IJCAI: International Joint Conference on Artificial Intelligence 2025",
+        color: color,
+        location: "Montreal, Canada",
+        date: "~August 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icml_international_conference_on_machine_learning_2025-deadline",
+      abbreviation: "icml_international_conference_on_machine_learning_2025",
+      name: "ICML: International Conference on Machine Learning 2025",
+      color: "red",
+      location: "Vancouver, Canada",
+      date: "July 11 - 19 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-01"),
+      endDate: Date.parse("2025-02-01"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icml_international_conference_on_machine_learning_2025-abstract-deadline",
+      abbreviation: "icml_international_conference_on_machine_learning_2025",
+      name: "ICML: International Conference on Machine Learning 2025 - Abstract Deadline",
+      color: "red",
+      location: "Vancouver, Canada",
+      date: "July 11 - 19 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-01"),
+      endDate: Date.parse("2025-02-01"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icml_international_conference_on_machine_learning_2025-conference",
+        abbreviation: "icml_international_conference_on_machine_learning_2025",
+        name: "ICML: International Conference on Machine Learning 2025",
+        color: color,
+        location: "Vancouver, Canada",
+        date: "July 11 - 19 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icml_agentic_markets_2025-deadline",
+      abbreviation: "icml_agentic_markets_2025",
+      name: "ICML: Agentic Markets 2025",
+      color: "red",
+      location: "Vancouver, Canada",
+      date: "July 11 - 19 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-05-26"),
+      endDate: Date.parse("2025-05-26"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icml_agentic_markets_2025-abstract-deadline",
+      abbreviation: "icml_agentic_markets_2025",
+      name: "ICML: Agentic Markets 2025 - Abstract Deadline",
+      color: "red",
+      location: "Vancouver, Canada",
+      date: "July 11 - 19 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-05-26"),
+      endDate: Date.parse("2025-05-26"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icml_agentic_markets_2025-conference",
+        abbreviation: "icml_agentic_markets_2025",
+        name: "ICML: Agentic Markets 2025",
+        color: color,
+        location: "Vancouver, Canada",
+        date: "July 11 - 19 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icml_multimodal_foundation_model_meets_embodied_ai_mfmeai_2025-deadline",
+      abbreviation: "icml_multimodal_foundation_model_meets_embodied_ai_mfmeai_2025",
+      name: "ICML: Multi-modal Foundation Model meets Embodied AI (MFM-EAI) 2025",
+      color: "red",
+      location: "Vancouver, Canada",
+      date: "July 11 - 19 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-05-27"),
+      endDate: Date.parse("2025-05-27"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icml_multimodal_foundation_model_meets_embodied_ai_mfmeai_2025-abstract-deadline",
+      abbreviation: "icml_multimodal_foundation_model_meets_embodied_ai_mfmeai_2025",
+      name: "ICML: Multi-modal Foundation Model meets Embodied AI (MFM-EAI) 2025 - Abstract Deadline",
+      color: "red",
+      location: "Vancouver, Canada",
+      date: "July 11 - 19 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-05-27"),
+      endDate: Date.parse("2025-05-27"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icml_multimodal_foundation_model_meets_embodied_ai_mfmeai_2025-conference",
+        abbreviation: "icml_multimodal_foundation_model_meets_embodied_ai_mfmeai_2025",
+        name: "ICML: Multi-modal Foundation Model meets Embodied AI (MFM-EAI) 2025",
+        color: color,
+        location: "Vancouver, Canada",
+        date: "July 11 - 19 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "acl_annual_meeting_of_the_association_for_computational_linguistics_2025-deadline",
+      abbreviation: "acl_annual_meeting_of_the_association_for_computational_linguistics_2025",
+      name: "ACL: Annual Meeting of the Association for Computational Linguistics 2025",
+      color: "red",
+      location: "Vienna, Austria",
+      date: "July 27 - August 1 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-15"),
+      endDate: Date.parse("2025-02-15"),
+    });
+
+    
+    conf_list_all.push({
+      id: "acl_annual_meeting_of_the_association_for_computational_linguistics_2025-abstract-deadline",
+      abbreviation: "acl_annual_meeting_of_the_association_for_computational_linguistics_2025",
+      name: "ACL: Annual Meeting of the Association for Computational Linguistics 2025 - Abstract Deadline",
+      color: "red",
+      location: "Vienna, Austria",
+      date: "July 27 - August 1 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-15"),
+      endDate: Date.parse("2025-02-15"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "acl_annual_meeting_of_the_association_for_computational_linguistics_2025-conference",
+        abbreviation: "acl_annual_meeting_of_the_association_for_computational_linguistics_2025",
+        name: "ACL: Annual Meeting of the Association for Computational Linguistics 2025",
+        color: color,
+        location: "Vienna, Austria",
+        date: "July 27 - August 1 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "acl_natural_language_reasoning_and_structured_explanations_workshop_2025-deadline",
+      abbreviation: "acl_natural_language_reasoning_and_structured_explanations_workshop_2025",
+      name: "ACL: Natural Language Reasoning and Structured Explanations Workshop 2025",
+      color: "red",
+      location: "Vienna, Austria",
+      date: "July 27 - August 1 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-05-21"),
+      endDate: Date.parse("2025-05-21"),
+    });
+
+    
+    conf_list_all.push({
+      id: "acl_natural_language_reasoning_and_structured_explanations_workshop_2025-abstract-deadline",
+      abbreviation: "acl_natural_language_reasoning_and_structured_explanations_workshop_2025",
+      name: "ACL: Natural Language Reasoning and Structured Explanations Workshop 2025 - Abstract Deadline",
+      color: "red",
+      location: "Vienna, Austria",
+      date: "July 27 - August 1 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-05-21"),
+      endDate: Date.parse("2025-05-21"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "acl_natural_language_reasoning_and_structured_explanations_workshop_2025-conference",
+        abbreviation: "acl_natural_language_reasoning_and_structured_explanations_workshop_2025",
+        name: "ACL: Natural Language Reasoning and Structured Explanations Workshop 2025",
+        color: color,
+        location: "Vienna, Austria",
+        date: "July 27 - August 1 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "eacl_conference_of_the_european_chapterof_the_association_for_computational_linguistics_2025-deadline",
+      abbreviation: "eacl_conference_of_the_european_chapterof_the_association_for_computational_linguistics_2025",
+      name: "EACL: Conference of the European Chapterof the Association for Computational Linguistics 2025",
+      color: "red",
+      location: "?",
+      date: "~March 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-10-15"),
+      endDate: Date.parse("2025-10-15"),
+    });
+
+    
+    conf_list_all.push({
+      id: "eacl_conference_of_the_european_chapterof_the_association_for_computational_linguistics_2025-abstract-deadline",
+      abbreviation: "eacl_conference_of_the_european_chapterof_the_association_for_computational_linguistics_2025",
+      name: "EACL: Conference of the European Chapterof the Association for Computational Linguistics 2025 - Abstract Deadline",
+      color: "red",
+      location: "?",
+      date: "~March 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-10-15"),
+      endDate: Date.parse("2025-10-15"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "eacl_conference_of_the_european_chapterof_the_association_for_computational_linguistics_2025-conference",
+        abbreviation: "eacl_conference_of_the_european_chapterof_the_association_for_computational_linguistics_2025",
+        name: "EACL: Conference of the European Chapterof the Association for Computational Linguistics 2025",
+        color: color,
+        location: "?",
+        date: "~March 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icse_international_conference_onsoftware_engineering_2024-deadline",
+      abbreviation: "icse_international_conference_onsoftware_engineering_2024",
+      name: "ICSE: International Conference onSoftware Engineering 2024",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-03-22"),
+      endDate: Date.parse("2024-03-22"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icse_international_conference_onsoftware_engineering_2024-abstract-deadline",
+      abbreviation: "icse_international_conference_onsoftware_engineering_2024",
+      name: "ICSE: International Conference onSoftware Engineering 2024 - Abstract Deadline",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-03-15"),
+      endDate: Date.parse("2024-03-15"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icse_international_conference_onsoftware_engineering_2024-conference",
+        abbreviation: "icse_international_conference_onsoftware_engineering_2024",
+        name: "ICSE: International Conference onSoftware Engineering 2024",
+        color: color,
+        location: "Ottawa, Canada",
+        date: "27 April - 3 May 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icse_international_conference_onsoftware_engineering_2025-deadline",
+      abbreviation: "icse_international_conference_onsoftware_engineering_2025",
+      name: "ICSE: International Conference onSoftware Engineering 2025",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-08-02"),
+      endDate: Date.parse("2024-08-02"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icse_international_conference_onsoftware_engineering_2025-abstract-deadline",
+      abbreviation: "icse_international_conference_onsoftware_engineering_2025",
+      name: "ICSE: International Conference onSoftware Engineering 2025 - Abstract Deadline",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-26"),
+      endDate: Date.parse("2025-06-26"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icse_international_conference_onsoftware_engineering_2025-conference",
+        abbreviation: "icse_international_conference_onsoftware_engineering_2025",
+        name: "ICSE: International Conference onSoftware Engineering 2025",
+        color: color,
+        location: "Ottawa, Canada",
+        date: "27 April - 3 May 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icse_ide_workshop_2025-deadline",
+      abbreviation: "icse_ide_workshop_2025",
+      name: "ICSE: IDE Workshop 2025",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-12-31"),
+      endDate: Date.parse("2025-12-31"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icse_ide_workshop_2025-abstract-deadline",
+      abbreviation: "icse_ide_workshop_2025",
+      name: "ICSE: IDE Workshop 2025 - Abstract Deadline",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-12-31"),
+      endDate: Date.parse("2025-12-31"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icse_ide_workshop_2025-conference",
+        abbreviation: "icse_ide_workshop_2025",
+        name: "ICSE: IDE Workshop 2025",
+        color: color,
+        location: "Ottawa, Canada",
+        date: "27 April - 3 May 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icse_industry_challange_track_2024-deadline",
+      abbreviation: "icse_industry_challange_track_2024",
+      name: "ICSE: Industry Challange Track 2024",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-07"),
+      endDate: Date.parse("2024-11-07"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icse_industry_challange_track_2024-abstract-deadline",
+      abbreviation: "icse_industry_challange_track_2024",
+      name: "ICSE: Industry Challange Track 2024 - Abstract Deadline",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-07"),
+      endDate: Date.parse("2024-11-07"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icse_industry_challange_track_2024-conference",
+        abbreviation: "icse_industry_challange_track_2024",
+        name: "ICSE: Industry Challange Track 2024",
+        color: color,
+        location: "Ottawa, Canada",
+        date: "27 April - 3 May 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icse_tool_demonstration_track_2024-deadline",
+      abbreviation: "icse_tool_demonstration_track_2024",
+      name: "ICSE: Tool Demonstration Track 2024",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-10"),
+      endDate: Date.parse("2024-10-10"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icse_tool_demonstration_track_2024-abstract-deadline",
+      abbreviation: "icse_tool_demonstration_track_2024",
+      name: "ICSE: Tool Demonstration Track 2024 - Abstract Deadline",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-10"),
+      endDate: Date.parse("2024-10-10"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icse_tool_demonstration_track_2024-conference",
+        abbreviation: "icse_tool_demonstration_track_2024",
+        name: "ICSE: Tool Demonstration Track 2024",
+        color: color,
+        location: "Ottawa, Canada",
+        date: "27 April - 3 May 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icse_new_ideas_and_emerging_results_nier_2024-deadline",
+      abbreviation: "icse_new_ideas_and_emerging_results_nier_2024",
+      name: "ICSE: New Ideas and Emerging Results (NIER) 2024",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-10"),
+      endDate: Date.parse("2024-10-10"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icse_new_ideas_and_emerging_results_nier_2024-abstract-deadline",
+      abbreviation: "icse_new_ideas_and_emerging_results_nier_2024",
+      name: "ICSE: New Ideas and Emerging Results (NIER) 2024 - Abstract Deadline",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "27 April - 3 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-10"),
+      endDate: Date.parse("2024-10-10"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icse_new_ideas_and_emerging_results_nier_2024-conference",
+        abbreviation: "icse_new_ideas_and_emerging_results_nier_2024",
+        name: "ICSE: New Ideas and Emerging Results (NIER) 2024",
+        color: color,
+        location: "Ottawa, Canada",
+        date: "27 April - 3 May 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "msr_mining_software_repositories_2024-deadline",
+      abbreviation: "msr_mining_software_repositories_2024",
+      name: "MSR: Mining Software Repositories 2024",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "28 April - 29 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-09"),
+      endDate: Date.parse("2024-11-09"),
+    });
+
+    
+    conf_list_all.push({
+      id: "msr_mining_software_repositories_2024-abstract-deadline",
+      abbreviation: "msr_mining_software_repositories_2024",
+      name: "MSR: Mining Software Repositories 2024 - Abstract Deadline",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "28 April - 29 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-06"),
+      endDate: Date.parse("2024-11-06"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "msr_mining_software_repositories_2024-conference",
+        abbreviation: "msr_mining_software_repositories_2024",
+        name: "MSR: Mining Software Repositories 2024",
+        color: color,
+        location: "Ottawa, Canada",
+        date: "28 April - 29 May 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "msr_data_and_tool_showcase_track_2024-deadline",
+      abbreviation: "msr_data_and_tool_showcase_track_2024",
+      name: "MSR: Data and Tool Showcase Track 2024",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "29 April - 29 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-12-02"),
+      endDate: Date.parse("2024-12-02"),
+    });
+
+    
+    conf_list_all.push({
+      id: "msr_data_and_tool_showcase_track_2024-abstract-deadline",
+      abbreviation: "msr_data_and_tool_showcase_track_2024",
+      name: "MSR: Data and Tool Showcase Track 2024 - Abstract Deadline",
+      color: "red",
+      location: "Ottawa, Canada",
+      date: "29 April - 29 May 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-29"),
+      endDate: Date.parse("2024-11-29"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "msr_data_and_tool_showcase_track_2024-conference",
+        abbreviation: "msr_data_and_tool_showcase_track_2024",
+        name: "MSR: Data and Tool Showcase Track 2024",
+        color: color,
+        location: "Ottawa, Canada",
+        date: "29 April - 29 May 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "esai_european_conference_on_artificial_intelligence_2025-deadline",
+      abbreviation: "esai_european_conference_on_artificial_intelligence_2025",
+      name: "ESAI: European Conference on Artificial Intelligence 2025",
+      color: "red",
+      location: "Bologna, Italy",
+      date: "October 27-31, 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-04-01"),
+      endDate: Date.parse("2025-04-01"),
+    });
+
+    
+    conf_list_all.push({
+      id: "esai_european_conference_on_artificial_intelligence_2025-abstract-deadline",
+      abbreviation: "esai_european_conference_on_artificial_intelligence_2025",
+      name: "ESAI: European Conference on Artificial Intelligence 2025 - Abstract Deadline",
+      color: "red",
+      location: "Bologna, Italy",
+      date: "October 27-31, 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-04-01"),
+      endDate: Date.parse("2025-04-01"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "esai_european_conference_on_artificial_intelligence_2025-conference",
+        abbreviation: "esai_european_conference_on_artificial_intelligence_2025",
+        name: "ESAI: European Conference on Artificial Intelligence 2025",
+        color: color,
+        location: "Bologna, Italy",
+        date: "October 27-31, 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "emnlp_empirical_methods_in_natural_language_processing_2025-deadline",
+      abbreviation: "emnlp_empirical_methods_in_natural_language_processing_2025",
+      name: "EMNLP: Empirical Methods in Natural Language Processing 2025",
+      color: "red",
+      location: "?",
+      date: "~November 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-15"),
+      endDate: Date.parse("2025-06-15"),
+    });
+
+    
+    conf_list_all.push({
+      id: "emnlp_empirical_methods_in_natural_language_processing_2025-abstract-deadline",
+      abbreviation: "emnlp_empirical_methods_in_natural_language_processing_2025",
+      name: "EMNLP: Empirical Methods in Natural Language Processing 2025 - Abstract Deadline",
+      color: "red",
+      location: "?",
+      date: "~November 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-15"),
+      endDate: Date.parse("2025-06-15"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "emnlp_empirical_methods_in_natural_language_processing_2025-conference",
+        abbreviation: "emnlp_empirical_methods_in_natural_language_processing_2025",
+        name: "EMNLP: Empirical Methods in Natural Language Processing 2025",
+        color: color,
+        location: "?",
+        date: "~November 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "emnlp_system_demonstration_track_2025-deadline",
+      abbreviation: "emnlp_system_demonstration_track_2025",
+      name: "EMNLP: System Demonstration Track 2025",
+      color: "red",
+      location: "?",
+      date: "~November 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-08-05"),
+      endDate: Date.parse("2025-08-05"),
+    });
+
+    
+    conf_list_all.push({
+      id: "emnlp_system_demonstration_track_2025-abstract-deadline",
+      abbreviation: "emnlp_system_demonstration_track_2025",
+      name: "EMNLP: System Demonstration Track 2025 - Abstract Deadline",
+      color: "red",
+      location: "?",
+      date: "~November 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-08-05"),
+      endDate: Date.parse("2025-08-05"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "emnlp_system_demonstration_track_2025-conference",
+        abbreviation: "emnlp_system_demonstration_track_2025",
+        name: "EMNLP: System Demonstration Track 2025",
+        color: color,
+        location: "?",
+        date: "~November 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "emnlp_industry_track_2025-deadline",
+      abbreviation: "emnlp_industry_track_2025",
+      name: "EMNLP: Industry Track 2025",
+      color: "red",
+      location: "?",
+      date: "~November 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-07-18"),
+      endDate: Date.parse("2025-07-18"),
+    });
+
+    
+    conf_list_all.push({
+      id: "emnlp_industry_track_2025-abstract-deadline",
+      abbreviation: "emnlp_industry_track_2025",
+      name: "EMNLP: Industry Track 2025 - Abstract Deadline",
+      color: "red",
+      location: "?",
+      date: "~November 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-07-18"),
+      endDate: Date.parse("2025-07-18"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "emnlp_industry_track_2025-conference",
+        abbreviation: "emnlp_industry_track_2025",
+        name: "EMNLP: Industry Track 2025",
+        color: color,
+        location: "?",
+        date: "~November 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "iclr_international_conference_on_learning_representations_2024-deadline",
+      abbreviation: "iclr_international_conference_on_learning_representations_2024",
+      name: "ICLR: International Conference on Learning Representations 2024",
+      color: "red",
+      location: "Singapore",
+      date: "Apr 24 - 28 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-01"),
+      endDate: Date.parse("2024-10-01"),
+    });
+
+    
+    conf_list_all.push({
+      id: "iclr_international_conference_on_learning_representations_2024-abstract-deadline",
+      abbreviation: "iclr_international_conference_on_learning_representations_2024",
+      name: "ICLR: International Conference on Learning Representations 2024 - Abstract Deadline",
+      color: "red",
+      location: "Singapore",
+      date: "Apr 24 - 28 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-09-27"),
+      endDate: Date.parse("2024-09-27"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "iclr_international_conference_on_learning_representations_2024-conference",
+        abbreviation: "iclr_international_conference_on_learning_representations_2024",
+        name: "ICLR: International Conference on Learning Representations 2024",
+        color: color,
+        location: "Singapore",
+        date: "Apr 24 - 28 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "iclr_generative_models_for_decision_making_2025-deadline",
+      abbreviation: "iclr_generative_models_for_decision_making_2025",
+      name: "ICLR: Generative Models for Decision Making 2025",
+      color: "red",
+      location: "Singapore",
+      date: "Apr 24 - 28 2026",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-09"),
+      endDate: Date.parse("2025-02-09"),
+    });
+
+    
+    conf_list_all.push({
+      id: "iclr_generative_models_for_decision_making_2025-abstract-deadline",
+      abbreviation: "iclr_generative_models_for_decision_making_2025",
+      name: "ICLR: Generative Models for Decision Making 2025 - Abstract Deadline",
+      color: "red",
+      location: "Singapore",
+      date: "Apr 24 - 28 2026",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-09"),
+      endDate: Date.parse("2025-02-09"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "iclr_generative_models_for_decision_making_2025-conference",
+        abbreviation: "iclr_generative_models_for_decision_making_2025",
+        name: "ICLR: Generative Models for Decision Making 2025",
+        color: color,
+        location: "Singapore",
+        date: "Apr 24 - 28 2026",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "iclr_workshop_on_llm_agents_2025-deadline",
+      abbreviation: "iclr_workshop_on_llm_agents_2025",
+      name: "ICLR: Workshop on LLM Agents 2025",
+      color: "red",
+      location: "Singapore",
+      date: "Apr 24 - 28 2027",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-11"),
+      endDate: Date.parse("2025-02-11"),
+    });
+
+    
+    conf_list_all.push({
+      id: "iclr_workshop_on_llm_agents_2025-abstract-deadline",
+      abbreviation: "iclr_workshop_on_llm_agents_2025",
+      name: "ICLR: Workshop on LLM Agents 2025 - Abstract Deadline",
+      color: "red",
+      location: "Singapore",
+      date: "Apr 24 - 28 2027",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-11"),
+      endDate: Date.parse("2025-02-11"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "iclr_workshop_on_llm_agents_2025-conference",
+        abbreviation: "iclr_workshop_on_llm_agents_2025",
+        name: "ICLR: Workshop on LLM Agents 2025",
+        color: color,
+        location: "Singapore",
+        date: "Apr 24 - 28 2027",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icsme_international_conference_on_software_maintenance_and_evolution_2025-deadline",
+      abbreviation: "icsme_international_conference_on_software_maintenance_and_evolution_2025",
+      name: "ICSME: International Conference on Software Maintenance and Evolution 2025",
+      color: "red",
+      location: "Auckland, New Zealand",
+      date: "September 8 - 13 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-20"),
+      endDate: Date.parse("2025-06-20"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icsme_international_conference_on_software_maintenance_and_evolution_2025-abstract-deadline",
+      abbreviation: "icsme_international_conference_on_software_maintenance_and_evolution_2025",
+      name: "ICSME: International Conference on Software Maintenance and Evolution 2025 - Abstract Deadline",
+      color: "red",
+      location: "Auckland, New Zealand",
+      date: "September 8 - 13 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-20"),
+      endDate: Date.parse("2025-06-20"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icsme_international_conference_on_software_maintenance_and_evolution_2025-conference",
+        abbreviation: "icsme_international_conference_on_software_maintenance_and_evolution_2025",
+        name: "ICSME: International Conference on Software Maintenance and Evolution 2025",
+        color: color,
+        location: "Auckland, New Zealand",
+        date: "September 8 - 13 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icsme_industry_challange_track_2025-deadline",
+      abbreviation: "icsme_industry_challange_track_2025",
+      name: "ICSME: Industry Challange Track 2025",
+      color: "red",
+      location: "Auckland, New Zealand",
+      date: "September 8 - 13 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-20"),
+      endDate: Date.parse("2025-06-20"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icsme_industry_challange_track_2025-abstract-deadline",
+      abbreviation: "icsme_industry_challange_track_2025",
+      name: "ICSME: Industry Challange Track 2025 - Abstract Deadline",
+      color: "red",
+      location: "Auckland, New Zealand",
+      date: "September 8 - 13 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-20"),
+      endDate: Date.parse("2025-06-20"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icsme_industry_challange_track_2025-conference",
+        abbreviation: "icsme_industry_challange_track_2025",
+        name: "ICSME: Industry Challange Track 2025",
+        color: color,
+        location: "Auckland, New Zealand",
+        date: "September 8 - 13 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "icsme_tool_demonstration_track_2025-deadline",
+      abbreviation: "icsme_tool_demonstration_track_2025",
+      name: "ICSME: Tool Demonstration Track 2025",
+      color: "red",
+      location: "Auckland, New Zealand",
+      date: "September 8 - 13 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-20"),
+      endDate: Date.parse("2025-06-20"),
+    });
+
+    
+    conf_list_all.push({
+      id: "icsme_tool_demonstration_track_2025-abstract-deadline",
+      abbreviation: "icsme_tool_demonstration_track_2025",
+      name: "ICSME: Tool Demonstration Track 2025 - Abstract Deadline",
+      color: "red",
+      location: "Auckland, New Zealand",
+      date: "September 8 - 13 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-20"),
+      endDate: Date.parse("2025-06-20"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "icsme_tool_demonstration_track_2025-conference",
+        abbreviation: "icsme_tool_demonstration_track_2025",
+        name: "ICSME: Tool Demonstration Track 2025",
+        color: color,
+        location: "Auckland, New Zealand",
+        date: "September 8 - 13 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "saner_international_conference_on_software_analysis_evolution_and_reengineering_2024-deadline",
+      abbreviation: "saner_international_conference_on_software_analysis_evolution_and_reengineering_2024",
+      name: "SANER: International Conference on Software Analysis, Evolution and Reengineering 2024",
+      color: "red",
+      location: "Montréal, Québec, Canada",
+      date: "March 4 - 7 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-11"),
+      endDate: Date.parse("2024-10-11"),
+    });
+
+    
+    conf_list_all.push({
+      id: "saner_international_conference_on_software_analysis_evolution_and_reengineering_2024-abstract-deadline",
+      abbreviation: "saner_international_conference_on_software_analysis_evolution_and_reengineering_2024",
+      name: "SANER: International Conference on Software Analysis, Evolution and Reengineering 2024 - Abstract Deadline",
+      color: "red",
+      location: "Montréal, Québec, Canada",
+      date: "March 4 - 7 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-10-04"),
+      endDate: Date.parse("2024-10-04"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "saner_international_conference_on_software_analysis_evolution_and_reengineering_2024-conference",
+        abbreviation: "saner_international_conference_on_software_analysis_evolution_and_reengineering_2024",
+        name: "SANER: International Conference on Software Analysis, Evolution and Reengineering 2024",
+        color: color,
+        location: "Montréal, Québec, Canada",
+        date: "March 4 - 7 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "saner_industry_track_2024-deadline",
+      abbreviation: "saner_industry_track_2024",
+      name: "SANER: Industry Track 2024",
+      color: "red",
+      location: "Montréal, Québec, Canada",
+      date: "March 4 - 7 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-08"),
+      endDate: Date.parse("2024-11-08"),
+    });
+
+    
+    conf_list_all.push({
+      id: "saner_industry_track_2024-abstract-deadline",
+      abbreviation: "saner_industry_track_2024",
+      name: "SANER: Industry Track 2024 - Abstract Deadline",
+      color: "red",
+      location: "Montréal, Québec, Canada",
+      date: "March 4 - 7 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-01"),
+      endDate: Date.parse("2024-11-01"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "saner_industry_track_2024-conference",
+        abbreviation: "saner_industry_track_2024",
+        name: "SANER: Industry Track 2024",
+        color: color,
+        location: "Montréal, Québec, Canada",
+        date: "March 4 - 7 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "saner_tool_demonstration_track_2024-deadline",
+      abbreviation: "saner_tool_demonstration_track_2024",
+      name: "SANER: Tool Demonstration Track 2024",
+      color: "red",
+      location: "Montréal, Québec, Canada",
+      date: "March 4 - 7 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-23"),
+      endDate: Date.parse("2024-11-23"),
+    });
+
+    
+    conf_list_all.push({
+      id: "saner_tool_demonstration_track_2024-abstract-deadline",
+      abbreviation: "saner_tool_demonstration_track_2024",
+      name: "SANER: Tool Demonstration Track 2024 - Abstract Deadline",
+      color: "red",
+      location: "Montréal, Québec, Canada",
+      date: "March 4 - 7 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-22"),
+      endDate: Date.parse("2024-11-22"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "saner_tool_demonstration_track_2024-conference",
+        abbreviation: "saner_tool_demonstration_track_2024",
+        name: "SANER: Tool Demonstration Track 2024",
+        color: color,
+        location: "Montréal, Québec, Canada",
+        date: "March 4 - 7 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "saner_workshops_track_2024-deadline",
+      abbreviation: "saner_workshops_track_2024",
+      name: "SANER: Workshops Track 2024",
+      color: "red",
+      location: "Montréal, Québec, Canada",
+      date: "March 4 - 7 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-29"),
+      endDate: Date.parse("2024-11-29"),
+    });
+
+    
+    conf_list_all.push({
+      id: "saner_workshops_track_2024-abstract-deadline",
+      abbreviation: "saner_workshops_track_2024",
+      name: "SANER: Workshops Track 2024 - Abstract Deadline",
+      color: "red",
+      location: "Montréal, Québec, Canada",
+      date: "March 4 - 7 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-11-22"),
+      endDate: Date.parse("2024-11-22"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "saner_workshops_track_2024-conference",
+        abbreviation: "saner_workshops_track_2024",
+        name: "SANER: Workshops Track 2024",
+        color: color,
+        location: "Montréal, Québec, Canada",
+        date: "March 4 - 7 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "fse_foundations_of_software_engineering_2024-deadline",
+      abbreviation: "fse_foundations_of_software_engineering_2024",
+      name: "FSE: Foundations of Software Engineering 2024",
+      color: "red",
+      location: "Trondheim, Norway",
+      date: "June 23 - 27 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-09-12"),
+      endDate: Date.parse("2024-09-12"),
+    });
+
+    
+    conf_list_all.push({
+      id: "fse_foundations_of_software_engineering_2024-abstract-deadline",
+      abbreviation: "fse_foundations_of_software_engineering_2024",
+      name: "FSE: Foundations of Software Engineering 2024 - Abstract Deadline",
+      color: "red",
+      location: "Trondheim, Norway",
+      date: "June 23 - 27 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2024-09-12"),
+      endDate: Date.parse("2024-09-12"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "fse_foundations_of_software_engineering_2024-conference",
+        abbreviation: "fse_foundations_of_software_engineering_2024",
+        name: "FSE: Foundations of Software Engineering 2024",
+        color: color,
+        location: "Trondheim, Norway",
+        date: "June 23 - 27 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "fse_industry_track_2025-deadline",
+      abbreviation: "fse_industry_track_2025",
+      name: "FSE: Industry Track 2025",
+      color: "red",
+      location: "Trondheim, Norway",
+      date: "June 23 - 27 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-01-29"),
+      endDate: Date.parse("2025-01-29"),
+    });
+
+    
+    conf_list_all.push({
+      id: "fse_industry_track_2025-abstract-deadline",
+      abbreviation: "fse_industry_track_2025",
+      name: "FSE: Industry Track 2025 - Abstract Deadline",
+      color: "red",
+      location: "Trondheim, Norway",
+      date: "June 23 - 27 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-01-29"),
+      endDate: Date.parse("2025-01-29"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "fse_industry_track_2025-conference",
+        abbreviation: "fse_industry_track_2025",
+        name: "FSE: Industry Track 2025",
+        color: color,
+        location: "Trondheim, Norway",
+        date: "June 23 - 27 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "fse_tool_track_2025-deadline",
+      abbreviation: "fse_tool_track_2025",
+      name: "FSE: Tool Track 2025",
+      color: "red",
+      location: "Trondheim, Norway",
+      date: "June 23 - 27 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-08"),
+      endDate: Date.parse("2025-02-08"),
+    });
+
+    
+    conf_list_all.push({
+      id: "fse_tool_track_2025-abstract-deadline",
+      abbreviation: "fse_tool_track_2025",
+      name: "FSE: Tool Track 2025 - Abstract Deadline",
+      color: "red",
+      location: "Trondheim, Norway",
+      date: "June 23 - 27 2025",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-02-08"),
+      endDate: Date.parse("2025-02-08"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "fse_tool_track_2025-conference",
+        abbreviation: "fse_tool_track_2025",
+        name: "FSE: Tool Track 2025",
+        color: color,
+        location: "Trondheim, Norway",
+        date: "June 23 - 27 2025",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "ase_automated_software_engineering_2025-deadline",
+      abbreviation: "ase_automated_software_engineering_2025",
+      name: "ASE: Automated Software Engineering 2025",
+      color: "red",
+      location: "Seoul, South Korea",
+      date: "November 16 - 20",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-12-31"),
+      endDate: Date.parse("2025-12-31"),
+    });
+
+    
+    conf_list_all.push({
+      id: "ase_automated_software_engineering_2025-abstract-deadline",
+      abbreviation: "ase_automated_software_engineering_2025",
+      name: "ASE: Automated Software Engineering 2025 - Abstract Deadline",
+      color: "red",
+      location: "Seoul, South Korea",
+      date: "November 16 - 20",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-12-31"),
+      endDate: Date.parse("2025-12-31"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "ase_automated_software_engineering_2025-conference",
+        abbreviation: "ase_automated_software_engineering_2025",
+        name: "ASE: Automated Software Engineering 2025",
+        color: color,
+        location: "Seoul, South Korea",
+        date: "November 16 - 20",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "ase_industry_track_2025-deadline",
+      abbreviation: "ase_industry_track_2025",
+      name: "ASE: Industry Track 2025",
+      color: "red",
+      location: "Seoul, South Korea",
+      date: "November 16 - 21",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-07-15"),
+      endDate: Date.parse("2025-07-15"),
+    });
+
+    
+    conf_list_all.push({
+      id: "ase_industry_track_2025-abstract-deadline",
+      abbreviation: "ase_industry_track_2025",
+      name: "ASE: Industry Track 2025 - Abstract Deadline",
+      color: "red",
+      location: "Seoul, South Korea",
+      date: "November 16 - 21",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-07-15"),
+      endDate: Date.parse("2025-07-15"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "ase_industry_track_2025-conference",
+        abbreviation: "ase_industry_track_2025",
+        name: "ASE: Industry Track 2025",
+        color: color,
+        location: "Seoul, South Korea",
+        date: "November 16 - 21",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+    // add deadlines in red
+    conf_list_all.push({
+      id: "ase_tool_track_2025-deadline",
+      abbreviation: "ase_tool_track_2025",
+      name: "ASE: Tool Track 2025",
+      color: "red",
+      location: "Seoul, South Korea",
+      date: "November 16 - 22",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-26"),
+      endDate: Date.parse("2025-06-26"),
+    });
+
+    
+    conf_list_all.push({
+      id: "ase_tool_track_2025-abstract-deadline",
+      abbreviation: "ase_tool_track_2025",
+      name: "ASE: Tool Track 2025 - Abstract Deadline",
+      color: "red",
+      location: "Seoul, South Korea",
+      date: "November 16 - 22",
+      hindex: "",
+      subject: "ML",
+      startDate: Date.parse("2025-06-26"),
+      endDate: Date.parse("2025-06-26"),
+    });
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+                    color = "#a432a8";
+            
+      
+      conf_list_all.push({
+        id: "ase_tool_track_2025-conference",
+        abbreviation: "ase_tool_track_2025",
+        name: "ASE: Tool Track 2025",
+        color: color,
+        location: "Seoul, South Korea",
+        date: "November 16 - 22",
+        hindex: "",
+        subject: "ML",
+        startDate: Date.parse(""),
+        endDate: Date.parse(""),
+      });
+    
+  
+
+  return conf_list_all;
+}
+
+function update_filtering(data) {
+  store.set('ai-agents-deadlines.github.io-subs', data.subs);
+
+  conf_list = conf_list_all.filter(v => {
+    var commonValues = data.subs.filter(function (value) {
+      return v.subject.indexOf(value) > -1;
+    });
+    var subject_match = commonValues.length > 0;
+    return subject_match;
+  });
+
+  // rerender calendar
+  calendar_data['dataSource'] = conf_list;  // need to update only this
+  calendar = new Calendar("#calendar-page", calendar_data);
+
+  if (subs.length == 0) {
+    window.history.pushState('', '', page_url);
+  } else {
+    window.history.pushState('', '', page_url + '/?sub=' + data.subs.join());
+  }
+}
+  // overwrites update_filtering
+
+
+    $(function () {
+      // Get data from URL/Cache
+      // Get subjects from URL/Cache
+var url = new URL(window.location);
+subs = url.searchParams.get("sub");
+if (subs == undefined) {
+  subs = store.get("ai-agents-deadlines.github.io-subs");
+} else {
+  subs = subs.toUpperCase().split(",");
+}
+
+// Apply selections
+if (subs == undefined) {
+  subs = all_subs;
+}
+$("#subject-select").multiselect("select", subs);
+update_filtering({ subs: subs, all_subs: all_subs });
+
+
+      conf_list_all = load_conference_list();
+      conf_list = conf_list_all;
+
+      // Render calendar
+      update_filtering({ subs: subs, all_subs: all_subs });
+    });
+
+
+  </script>
+</body>
+
+</html>

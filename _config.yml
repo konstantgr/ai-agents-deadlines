@@ -1,15 +1,15 @@
-title: AI Conference Deadlines
-description: Countdowns to top CV/NLP/ML/Robotics/AI conference deadlines
-author: Abhishek Das
+title: ⏰ Conference Deadlines
+description: Countdowns to conference deadlines
+author: Konstantin Grotov
 
-domain: 'ai-agents-deadlines'
+domain: 'ai-agents-deadlines.github.io'
 baseurl: ''
 
-twitter_hashtag: machinelearning
+twitter_hashtag: ''
 github_username: konstantgr
-github_repo: ai-deadlines
+github_repo: ai-agents-deadlines
 
 markdown: kramdown
 ga_id:
 
-include: [ '_pages' ]
+include: ['_pages']
