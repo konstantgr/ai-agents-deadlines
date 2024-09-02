@@ -18,7 +18,7 @@ class ConferenceRecord:
     abstract_deadline: str
     place: str
     date: str
-    sub: tuple[str] = ("ML", "workshop")
+    sub: str = "ML"
     timezone: str = "UTC-12"
     note: str = ""
 
@@ -29,6 +29,7 @@ def main(input_file: str, output_file: str):
     for _, row in df.iterrows():
         title = row["Conference Short Name"] + ": " + row["Event Full Name"]
         title = title.replace("\n", "").strip()
+        print(title)
         if row["Abstract Submition Deadline"] == "?":
             year = 2025
             abstract_deadline = submission_deadline = "2025-12-31"
@@ -55,11 +56,8 @@ def main(input_file: str, output_file: str):
             place=row["Place"],
             date=row["Conference Dates"],
             note=row["Event \nMain Track / Workshop / Challange"],
-            sub=("ML", row["Event \nMain Track / Workshop / Challange"].replace(" ", "_"))
         )
-        d = asdict(record)
-        d["sub"] = list(d["sub"])
-        records.append(d)
+        records.append(asdict(record))
 
     with open(output_file, "w+") as f:
         yaml.dump(records, f, allow_unicode=True)
